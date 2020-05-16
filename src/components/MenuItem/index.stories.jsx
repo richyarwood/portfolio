@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import MenuItem from '.';
 
 export default {
@@ -12,7 +12,7 @@ export const MenuItems = () => (
   <>
     <MenuItem
       text={text('Button text', 'Hello World')}
-      active={boolean('Active', false)}
+      url={text('Link url', 'http://www.example.org')}
     />
   </>
 );

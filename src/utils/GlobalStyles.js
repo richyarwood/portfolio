@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
   /* Add some sizing helpers */
   :root {
     --xl: 4rem;
-    --l: 3.5rem;
+    --lg: 3.5rem;
     --md: 2.5rem;
     --sm: 1.5rem;
     --xs: 1rem;
@@ -35,6 +35,11 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     box-sizing: border-box;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
