@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 const PostTemplate = ({ data }) => {
   const { title } = data.mdx.frontmatter;
@@ -9,7 +9,7 @@ const PostTemplate = ({ data }) => {
   return (
     <Layout>
       <div>
-        { title }
+        {title}
       </div>
       <MDXRenderer>
         {data.mdx.body}
