@@ -10,7 +10,9 @@ const VerticalNavStyles = styled.ul`
 `;
 
 const VerticalNav = ({ menuItems }) => (
-  <VerticalNavStyles>
+  <VerticalNavStyles
+    role="menubar"
+  >
     {menuItems.map((item) => (
       <MenuItem
         text={item.name}

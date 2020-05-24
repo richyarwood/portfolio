@@ -16,20 +16,20 @@ const MenuItemStyles = styled(Link)`
   background-color: ${(props) => (props.active ? 'var(--lightGrey)' : 'var(--darkGrey)')};
   padding: 1.5rem 3.5rem;
   color: var(--white);
-  width: 150px;
+  width: 80px;
   color: var(--white);
   font-family: var(--condensedFont);
-  font-size: var(--md);
+  font-size: 1.8rem;
   position: relative;
   transition: background-color ease-in-out 0.2s;
-  border-top: 2px solid var(--jsxBlue);
+  border-top: 1px solid var(--lightGrey);
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:last-child {
-    border-bottom: 2px solid var(--jsxBlue);
+    border-bottom: 1px solid var(--lightGrey);
   }
 
   &.active,
