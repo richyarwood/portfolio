@@ -24,9 +24,10 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --xl: 4rem;
     --lg: 3.5rem;
-    --md: 2.5rem;
+    --md: 2rem;
     --sm: 1.5rem;
     --xs: 1rem;
+    --regular: 300;
   }
 
   html {
@@ -34,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    background-color: #000000;
     box-sizing: border-box;
     margin: 0;
   }
