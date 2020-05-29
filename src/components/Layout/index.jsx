@@ -46,10 +46,10 @@ const SidebarStyles = styled.div`
 
 const MainStyles = styled.div`
   background-color: var(--darkGrey);
-  width: 100%;
   height: 100vh;
-  margin-left: 0;
+  max-width: 1280px;
   overflow-y: auto;
+  width: 100%;
 
   ${mq.tablet}{
     margin-left: calc(${sideBarWidth}px + 10px);
@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
   // TODO see this: https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyles backgroundColor="#000000" />
       <WrapperStyles>
         <SidebarStyles
           className={`${!toggleMenu ? '' : 'menu--active'}`}

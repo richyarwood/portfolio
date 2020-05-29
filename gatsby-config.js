@@ -3,15 +3,15 @@ module.exports = {
     title: 'Richard Yarwood - full stack JavaScript Developer',
     menuItems: [
       {
-        name: 'home',
+        name: 'Home',
         link: '/',
       },
       {
-        name: 'posts',
+        name: 'Posts',
         link: '/posts',
       },
       {
-        name: 'resources',
+        name: 'Resources',
         link: '/resources',
       },
     ],

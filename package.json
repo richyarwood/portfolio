@@ -15,9 +15,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "sb": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "sb": "yarn sb-build && NODE_ENV=production start-storybook -s ./storybook-static 6006",
+    "sb-build": "rm -rf ./storybook-static && NODE_ENV=production build-storybook -s public"
   },
   "repository": {
     "type": "git",

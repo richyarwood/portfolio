@@ -3,30 +3,30 @@ import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 
 const verticalLine = css`
-      content: '';
-      height: 100%;
-      top: 0;
-      right: 0;
-      background-color: var(--jsxBlue);
-      width: 5px;
-      position: absolute;
-      `;
+  content: '';
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: var(--jsxBlue);
+  width: 5px;
+  position: absolute;
+`;
 
 const MenuItemStyles = styled(Link)`
+  align-items: center;
   background-color: ${(props) => (props.active ? 'var(--lightGrey)' : 'var(--darkGrey)')};
-  padding: 1.5rem 3.5rem;
+  border-top: 1px solid var(--lightGrey);
   color: var(--white);
-  width: 80px;
-  color: var(--white);
+  display: flex;
   font-family: var(--condensedFont);
   font-size: 1.8rem;
-  position: relative;
-  transition: background-color ease-in-out 0.2s;
-  border-top: 1px solid var(--lightGrey);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  max-width: 150px;
+  position: relative;
+  padding: 1.5rem 3.5rem;
+  text-decoration: none;
+  transition: background-color ease-in-out 0.2s;
+  width: auto;
 
   &:last-child {
     border-bottom: 1px solid var(--lightGrey);

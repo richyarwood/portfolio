@@ -1,16 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
-import Hero from '../components/Hero';
 import CardGrid from '../components/CardGrid';
 import Card from '../components/Card';
 
-const IndexPage = ({ data }) => (
+const Posts = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <Hero />
     <CardGrid>
       {data.allMdx.edges.map(({ node: post }) => (
         <Card
@@ -26,9 +21,10 @@ const IndexPage = ({ data }) => (
   </Layout>
 );
 
+
 export const query = graphql`
-query HomeLatestPosts {
-  allMdx(limit: 4) {
+query CardGridQuery {
+  allMdx {
     edges {
       node {
         frontmatter {
@@ -51,4 +47,4 @@ query HomeLatestPosts {
 }
 `;
 
-export default IndexPage;
+export default Posts;
