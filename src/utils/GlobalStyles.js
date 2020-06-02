@@ -1,15 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 import 'typeface-roboto-condensed';
 import 'typeface-roboto';
+import 'typeface-open-sans';
 import { mq } from './presets';
 
 const GlobalStyles = createGlobalStyle`
   /* Color palette */
   :root {
     --black: #000000;
-    --lightGrey: #6d6d6d;
+    --lightGrey: #5c5756;
     --cssOrange: #ffa000;
-    --darkGrey: #424242;
+    --darkGrey: #383535;
     --white: #ffffff;
     --htmlGreen: #15a710;
     --jsxBlue: #3eacf7;
@@ -18,10 +19,10 @@ const GlobalStyles = createGlobalStyle`
   /* Fonts */
   :root {
     --condensedFont: 'Roboto Condensed';
-    --mainFont: 'Roboto';
+    --mainFont: 'Open Sans';
     --lightFont: 200;
-    --regularFont: 300;
-    --boldFont: 500;
+    --regularFont: 400;
+    --boldFont: 600;
   }
 
   /* Add some sizing helpers */
@@ -35,6 +36,10 @@ const GlobalStyles = createGlobalStyle`
     --xxs: 0.5rem;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     font-size: 10px;
   }
@@ -42,7 +47,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     /* Just so I can make the storybook background white! */
     background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
-    box-sizing: border-box;
     margin: 0;
   }
 
@@ -55,14 +59,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-
-    ${mq.phablet} {
       padding: 0 var(--md);
-    }
-
-    ${mq.desktop} {
-      padding: 0 var(--md);
-    }
 
     ${mq.xl} {
       padding: 0 var(--xxl);
