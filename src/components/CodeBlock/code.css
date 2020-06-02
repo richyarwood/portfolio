@@ -6,13 +6,13 @@
   -webkit-overflow-scrolling: touch;
   padding: 2rem;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: var(--sm);
 }
 .gatsby-highlight pre[class*="language-"]::before {
   background: black;
   border-radius: 0 0 0.25rem 0.25rem;
   color: white;
-  font-size: 12px;
+  font-size: var(--sm);
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
   position: absolute;
