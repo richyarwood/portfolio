@@ -25,7 +25,7 @@ const tagChoice = (choice) => {
 };
 
 const TagStyles = styled.div`
-  height:15px;
+  height:1.8rem;
   width: 40px;
   text-align: center;
   background-color: ${({ choice }) => choice && choice.color};
