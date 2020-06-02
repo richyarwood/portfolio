@@ -2,13 +2,18 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { mq } from '../../utils/presets';
 import Heading from '../Heading';
 
-const SideBarWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: var(--md);
+const SideBarProfileStyles = styled.div`
+  display: none;
+
+  ${mq.tablet}{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: var(--md);
+  }
 `;
 
 const RoundImage = styled(Img)`
@@ -31,7 +36,7 @@ const SideBarProfile = () => {
   `);
 
   return (
-    <SideBarWrapper>
+    <SideBarProfileStyles>
       <RoundImage
         fluid={data.file.childImageSharp.fluid}
         alt="Richard Yarwood - Full Stack Javacript Developer"
@@ -44,7 +49,7 @@ const SideBarProfile = () => {
       >
         Richard Yarwood
       </Heading>
-    </SideBarWrapper>
+    </SideBarProfileStyles>
   );
 };
 

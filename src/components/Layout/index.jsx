@@ -7,22 +7,14 @@ import { mq } from '../../utils/presets';
 import VerticalNav from '../VerticalNav';
 import SideBarProfile from '../SideBarProfile';
 import IconBlock from '../IconBlock';
-import Hamburger from '../Hamburger';
+import MobileHeader from '../MobileHeader';
 
 const sideBarWidth = 150;
+const mobileBarHeight = 30;
 
 const WrapperStyles = styled.div`
   display: flex;
   flex-direction: row;
-
-  ${mq.tablet} {
-    .sidebar__spacing {
-      display: block;
-      background-color: #000000;
-      height: 100vh;
-      width: var(--lg);
-    }
-  }
 `;
 
 const SidebarStyles = styled.div`
@@ -30,17 +22,19 @@ const SidebarStyles = styled.div`
   height: 100vh;
   left: -${sideBarWidth}px;
   position: fixed;
-  top: 0;
+  top: ${mobileBarHeight}px;
   transition: all 0.2s ease-in-out;
   width: ${sideBarWidth}px;
   z-index: 300;
 
   &.menu--active {
     left: 0;
+    box-shadow: 3px 1px 4px -1px rgba(0,0,0,0.7);
   }
 
   ${mq.tablet} {
     left: 0;
+    top: 0;
   }
 `;
 
@@ -78,15 +72,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles backgroundColor="#000000" />
+      <MobileHeader
+        onClick={() => setToggleMenu(!toggleMenu)}
+        height={mobileBarHeight}
+      />
       <WrapperStyles>
         <SidebarStyles
           className={`${!toggleMenu ? '' : 'menu--active'}`}
         >
-          <Hamburger
-            top="var(--md)"
-            left={`${sideBarWidth}px`}
-            onClick={() => setToggleMenu(!toggleMenu)}
-          />
           <SideBarProfile />
           <nav>
             <VerticalNav menuItems={data.site.siteMetadata.menuItems} />
