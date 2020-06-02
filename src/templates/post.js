@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import { mq } from '../utils/presets';
 import Layout from '../components/Layout';
 import Heading from '../components/Heading';
 import Box from '../components/Box';
@@ -21,11 +22,16 @@ const PostBody = styled.div`
   font-family: var(--mainFont);
   font-weight: var(--regularFont);
   line-height: 30px;
-  margin: var(--lg);
+  margin: var(--sm);
   transform: translateY(-100px);
+  max-width: 100%;
 
   & p {
     margin-bottom: var(--md);
+  }
+
+  ${mq.desktop} {
+    margin: var(--lg);
   }
 `;
 
@@ -46,9 +52,18 @@ padding-bottom: var(--lg);
 `;
 
 const RightSideWrapper = styled.div`
-  min-width: 300px;
-  height: 100vh;
-  margin: var(--md);
+  display: none;
+
+  ${mq.desktop} {
+    display: block;
+    min-width: 250px;
+    height: 100vh;
+    margin: var(--md);
+  }
+
+  ${mq.xl} {
+    min-width: 300px;
+  }
 `;
 
 const PostTemplate = ({ data, location }) => {

@@ -7,6 +7,7 @@
   padding: 2rem;
   border-radius: 5px;
   font-size: var(--sm);
+  white-space: pre-wrap;
 }
 .gatsby-highlight pre[class*="language-"]::before {
   background: black;
