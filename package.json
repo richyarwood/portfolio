@@ -53,6 +53,7 @@
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
     "styled-components": "^5.1.0",
+    "typeface-open-sans": "^0.0.75",
     "typeface-roboto": "^0.0.75",
     "typeface-roboto-condensed": "^0.0.75"
   },
