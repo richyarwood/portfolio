@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
+import PageContext from '../../context/PageContext';
 
 const verticalLine = css`
   content: '';
@@ -52,12 +53,16 @@ const MenuItem = ({
       'aria-current': 'page',
     } : {}
   );
+
+  const pagePath = useContext(PageContext);
+
   return (
     <MenuItemStyles
-      activeClassName="active"
+      className={pagePath === url ? 'active' : ''}
       to={url}
       role="menuitem"
       getProps={isActive}
+      activeStyle={{ color: 'red' }}
     >
       {text}
     </MenuItemStyles>
