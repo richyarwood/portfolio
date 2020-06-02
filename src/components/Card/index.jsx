@@ -6,23 +6,24 @@ import { mq } from '../../utils/presets';
 import Tag from '../Tag';
 
 const CardWrapper = styled.div`
-  background-color: var(--lightGrey);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  height: auto;
-  margin: var(--md);
-  overflow: hidden;
-  width: 100%;
 
   ${mq.phablet} {
-    width: 40%;
-  }
+  flex-basis: 50%;
+  max-width: 50%;
+}
 
-  ${mq.xl} {
-    width: auto;
-    max-width: 250px;
-  }
+  ${mq.desktop} {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+`;
+
+const CardBody = styled.div`
+  background-color: var(--lightGrey);
+  border-radius: 5px;
+  overflow: hidden;
+  width: auto;
+  margin: 0 var(--sm) var(--md) var(--sm);
 `;
 
 const CardImage = styled(Img)`
@@ -40,7 +41,7 @@ const CardTitle = styled.p`
 const CardDescription = styled.p`
   color: var(--white);
   font-size: 1.4rem;
-  font-weight: var(--lightFont);
+  font-weight: var(--regularFont);
   font-family: var(--mainFont);
   line-height: 2.5rem;
   margin-bottom: var(--sm);
@@ -64,37 +65,39 @@ const Card = ({
   title,
   cardUrl,
 }) => (
-  <Link
-    to={cardUrl}
-  >
-    <CardWrapper>
-      <CardImage
-        fluid={image}
-        alt={title}
-        objectFit="cover"
-        objectPosition="50% 50%"
-      />
-      <div css={`
+  <CardWrapper>
+    <Link
+      to={cardUrl}
+    >
+      <CardBody>
+        <CardImage
+          fluid={image}
+          alt={title}
+          objectFit="cover"
+          objectPosition="50% 50%"
+        />
+        <div css={`
       padding: var(--md);
     `}
-      >
-        <CardTitle>
-          {title}
-        </CardTitle>
-        <CardDescription>
-          {description}
-        </CardDescription>
-        <CardTags>
-          {tags.map((tag) => (
-            <Tag
-              key={tag}
-              choice={tag}
-            />
-          ))}
-        </CardTags>
-      </div>
-    </CardWrapper>
-  </Link>
+        >
+          <CardTitle>
+            {title}
+          </CardTitle>
+          <CardDescription>
+            {description}
+          </CardDescription>
+          <CardTags>
+            {tags.map((tag) => (
+              <Tag
+                key={tag}
+                choice={tag}
+              />
+            ))}
+          </CardTags>
+        </div>
+      </CardBody>
+    </Link>
+  </CardWrapper>
 );
 
 
