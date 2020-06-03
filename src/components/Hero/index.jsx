@@ -10,15 +10,16 @@ const HeroStyles = styled.div`
   display: flex;
   flex-direction: column;
   min-height: auto;
-  padding-top: 20px;
+  margin-bottom: var(--lg);
 
   ${mq.desktop} {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: var(--xxl);
   }
 `;
 
-const Image = styled(Img)`
+const HeroImage = styled(Img)`
   width: 100%;
 
   ${mq.desktop} {
@@ -29,6 +30,8 @@ const Image = styled(Img)`
 const HeroTextWrapper = styled.div`
   width: 100%;
   background-color: var(--lightGrey);
+  padding-left: 0;
+  padding-right: 0;
 
   ${mq.desktop} {
     width: 50%;
@@ -63,7 +66,7 @@ const Hero = () => {
 
   return (
     <HeroStyles>
-      <Image
+      <HeroImage
         fluid={data.file.childImageSharp.fluid}
         alt="Richard Yarwood - Full Stack Javascript Developer"
       />

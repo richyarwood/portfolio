@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { mq } from '../../utils/presets';
 
 const headingSizes = {
   h1: 4,
@@ -28,10 +29,14 @@ const HeadingStyles = styled.h1`
   margin: 0;
   position: relative;
   text-align: ${({ center }) => center && 'center'};
-  ${(props) => props.moreStyles && props.moreStyles};
+  ${({ moreStyles }) => moreStyles && moreStyles};
 
   & :after {
     ${({ underlined }) => underlined && horizontalLine};
+  }
+
+  ${mq.tablet} {
+    margin-left: ${({ marginLeft }) => marginLeft && 'var(--md)'};
   }
 `;
 
@@ -40,6 +45,7 @@ const Heading = ({
   center,
   children,
   color,
+  marginLeft,
   moreStyles,
   underlined,
 }) => (
@@ -47,6 +53,7 @@ const Heading = ({
     as={as}
     color={color}
     center={center}
+    marginLeft={marginLeft}
     moreStyles={moreStyles}
     underlined={underlined}
   >

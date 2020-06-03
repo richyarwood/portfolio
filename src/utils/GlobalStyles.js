@@ -59,10 +59,22 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-      padding: 0 var(--md);
+      padding-left: var(--md);
+      padding-right: var(--md);
 
-    ${mq.xl} {
-      padding: 0 var(--xxl);
+    ${mq.tablet} {
+      padding-left: var(--xl);
+      padding-right: var(--xl);
+    }
+  }
+
+  .container--remove {
+      margin-left: calc(var(--md) * -1);
+      margin-right: calc(var(--md) * -1);
+
+    ${mq.tablet} {
+      margin-left: calc(var(--xl) * -1);
+      margin-right: calc(var(--xl) * -1);
     }
   }
 `;

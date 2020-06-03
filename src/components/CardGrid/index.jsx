@@ -16,11 +16,9 @@ ${mq.phablet} {
 `;
 
 const CardGrid = ({ children }) => (
-  <div className="container">
-    <CardGridWrapper>
-      {children}
-    </CardGridWrapper>
-  </div>
+  <CardGridWrapper>
+    {children}
+  </CardGridWrapper>
 );
 
 export default CardGrid;

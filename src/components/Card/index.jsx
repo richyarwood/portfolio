@@ -7,23 +7,27 @@ import Tag from '../Tag';
 
 const CardWrapper = styled.div`
 
-  ${mq.phablet} {
+  ${mq.tablet} {
   flex-basis: 50%;
   max-width: 50%;
 }
 
-  ${mq.desktop} {
+  ${mq.xl} {
   flex-basis: 25%;
   max-width: 25%;
-}
+  }
 `;
 
 const CardBody = styled.div`
   background-color: var(--lightGrey);
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom: var(--lg);
   width: auto;
-  margin: 0 var(--sm) var(--md) var(--sm);
+
+  ${mq.tablet} {
+    margin : 0 var(--sm) var(--xl) var(--sm);
+  }
 `;
 
 const CardImage = styled(Img)`
