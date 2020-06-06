@@ -5,20 +5,11 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { mq } from '../utils/presets';
 import Layout from '../components/Layout';
+import { PageWrapper, RightSideWrapper } from '../components/SectionWrappers';
 import Heading from '../components/Heading';
 import Box from '../components/Box';
 import SideBarWidget from '../components/SideBarWidget';
 import Tag from '../components/Tag';
-
-const PostWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  > div:first-child {
-    width: 100%;
-    max-width: 800px;
-  }
-`;
 
 const PostBody = styled.div`
   font-size: var(--md);
@@ -54,18 +45,6 @@ padding-bottom: var(--lg);
 }
 `;
 
-const RightSideWrapper = styled.div`
-  display: none;
-
-  ${mq.desktop} {
-    display: block;
-    min-width: 250px;
-    height: 100vh;
-    margin: 0 var(--md);
-    max-width: 300px;
-  }
-`;
-
 const PostTemplate = ({ data, location }) => {
   const { title, tags } = data.mdx.frontmatter;
   const pagePath = location.pathname.replace(/^.*\//, '');
@@ -76,7 +55,7 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout>
-      <PostWrapper>
+      <PageWrapper>
         <div>
           {data.mdx.frontmatter.image && (
             <PostImage
@@ -117,7 +96,7 @@ const PostTemplate = ({ data, location }) => {
             items={filterItems(data.projects.edges)}
           />
         </RightSideWrapper>
-      </PostWrapper>
+      </PageWrapper>
     </Layout>
   );
 };

@@ -11,8 +11,8 @@ module.exports = {
         link: '/posts',
       },
       {
-        name: 'Resources',
-        link: '/resources',
+        name: 'Experience',
+        link: '/experience',
       },
     ],
   },
@@ -46,6 +46,13 @@ module.exports = {
       options: {
         name: 'projects',
         path: `${__dirname}/src/projects/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'experience',
+        path: `${__dirname}/src/experience/`,
       },
     },
     'gatsby-transformer-sharp',

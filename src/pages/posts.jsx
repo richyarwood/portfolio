@@ -33,7 +33,6 @@ const Posts = ({ data, location }) => (
             />
           ))}
         </CardGrid>
-
       </div>
     </Layout>
   </PageContext.Provider>
@@ -42,7 +41,7 @@ const Posts = ({ data, location }) => (
 
 export const query = graphql`
 query CardGridQuery {
-  allMdx {
+  allMdx(filter: {fields: {collection: {ne: "experience"}}}) {
     edges {
       node {
         frontmatter {
