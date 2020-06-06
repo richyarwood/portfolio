@@ -14,13 +14,16 @@ const PostWrapper = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 2300px;
+
+  & > div {
+    width: 100%;
+  }
 `;
 
 const PostBody = styled.div`
-  font-size: var(--sm);
+  font-size: var(--md);
   color: var(--white);
-  font-family: var(--mainFont);
-  font-weight: var(--regularFont);
+  font-weight: var(--lightFont);
   line-height: 30px;
   margin: var(--sm);
   transform: translateY(-100px);
@@ -58,7 +61,7 @@ const RightSideWrapper = styled.div`
     display: block;
     min-width: 250px;
     height: 100vh;
-    margin: var(--md);
+    margin: 0 var(--md);
   }
 
   ${mq.xl} {
@@ -84,7 +87,9 @@ const PostTemplate = ({ data, location }) => {
             />
           )}
           <PostBody>
-            <Box>
+            <Box
+              dark
+            >
               <PostTags>
                 {tags.map((tag) => (
                   <Tag

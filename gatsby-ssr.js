@@ -2,7 +2,6 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { preToCodeBlock } from 'mdx-utils';
 import CodeBlock from './src/components/CodeBlock';
-import './src/components/CodeBlock/code.css';
 
 const components = {
   pre: (preProps) => {

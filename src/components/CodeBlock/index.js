@@ -1,6 +1,52 @@
 import React from 'react';
+import styled from 'styled-components';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/vsDark';
+
+const CodeStyles = styled.div`
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+
+& pre[class*="language-"] {
+  padding: 2rem;
+  border-radius: 5px;
+  font-size: var(--sm);
+  white-space: pre;
+  overflow-x: scroll;
+}
+
+& pre[class*="language-"]::before {
+  background: black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  color: white;
+  font-size: var(--sm);
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0;
+}
+
+& pre[class~="language-js"]::before {
+  content: "js";
+  background: #f7df1e;
+  color: black;
+}
+
+& pre[class~="language-jsx"]::before {
+  content: "jsx";
+  background: #61dafb;
+  color: black;
+}
+
+& pre[class~="language-html"]::before {
+  content: "html";
+  background: #15A710;
+  color: black;
+}
+`;
 
 const CodeBlock = ({ codeString, language }) => (
   <Highlight
@@ -12,7 +58,7 @@ const CodeBlock = ({ codeString, language }) => (
     {({
       className, style, tokens, getLineProps, getTokenProps,
     }) => (
-      <div className="gatsby-highlight" data-language={language}>
+      <CodeStyles className="gatsby-highlight" data-language={language}>
         <pre className={className} style={style}>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
@@ -24,7 +70,7 @@ const CodeBlock = ({ codeString, language }) => (
             </div>
           ))}
         </pre>
-      </div>
+      </CodeStyles>
     )}
   </Highlight>
 );
