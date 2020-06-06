@@ -11,8 +11,7 @@ const CodeStyles = styled.div`
   padding: 2rem;
   border-radius: 5px;
   font-size: var(--sm);
-  white-space: pre;
-  overflow-x: scroll;
+  white-space: pre-wrap;
 }
 
 & pre[class*="language-"]::before {

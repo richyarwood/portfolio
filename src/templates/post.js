@@ -13,10 +13,10 @@ import Tag from '../components/Tag';
 const PostWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 2300px;
 
-  & > div {
+  > div:first-child {
     width: 100%;
+    max-width: 800px;
   }
 `;
 
@@ -27,7 +27,6 @@ const PostBody = styled.div`
   line-height: 30px;
   margin: var(--sm);
   transform: translateY(-100px);
-  max-width: 100%;
 
   & p {
     margin-bottom: var(--md);
@@ -41,6 +40,7 @@ const PostBody = styled.div`
 const PostImage = styled(Img)`
   height: 350px;
   border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 `;
 
 const PostTags = styled.div`
@@ -62,10 +62,7 @@ const RightSideWrapper = styled.div`
     min-width: 250px;
     height: 100vh;
     margin: 0 var(--md);
-  }
-
-  ${mq.xl} {
-    min-width: 300px;
+    max-width: 300px;
   }
 `;
 

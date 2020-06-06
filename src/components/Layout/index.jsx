@@ -41,7 +41,6 @@ const SidebarStyles = styled.div`
 const MainStyles = styled.div`
   background-color: var(--darkGrey);
   height: 100vh;
-  max-width: 1280px;
   padding-top: var(--xxl);
   overflow-y: auto;
   width: 100%;

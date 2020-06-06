@@ -12,7 +12,7 @@ const BoxStyles = styled.div`
   }
 
   ${mq.desktop} {
-    padding: var(--lg);
+    padding: var(--md);
   }
 `;
 
