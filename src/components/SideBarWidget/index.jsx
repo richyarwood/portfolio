@@ -7,7 +7,6 @@ import Box from '../Box';
 const PostLink = styled(Link)`
   color: var(--white);
   display: block;
-  font-family: var(--condensedFont);
   font-size: var(--sm);
   margin: var(--xs) 0;
 `;

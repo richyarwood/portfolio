@@ -19,7 +19,6 @@ const MenuItemStyles = styled(Link)`
   border-top: 1px solid var(--lightGrey);
   color: var(--white);
   display: flex;
-  font-family: var(--condensedFont);
   font-size: 1.8rem;
   justify-content: center;
   max-width: 150px;

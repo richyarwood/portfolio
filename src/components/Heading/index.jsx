@@ -24,7 +24,6 @@ const HeadingStyles = styled.h1`
   display: inline-block;
   font-size: ${headingSizes.h1}rem;
   font-size: ${({ as }) => as && `${headingSizes[as]}rem`};
-  font-family: var(--condensedFont);
   line-height: initial;
   margin: 0;
   position: relative;

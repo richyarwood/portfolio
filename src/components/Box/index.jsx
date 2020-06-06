@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { mq } from '../../utils/presets';
 
 const BoxStyles = styled.div`
-  background-color: var(--lightGrey);
+  background-color: ${({ dark }) => (dark ? 'var(--darkGrey)' : 'var(--lightGrey)')};
   border-radius: 5px;
   padding: var(--sm);
 
@@ -16,8 +16,10 @@ const BoxStyles = styled.div`
   }
 `;
 
-const Box = ({ children }) => (
-  <BoxStyles>
+const Box = ({ children, dark }) => (
+  <BoxStyles
+    dark={dark}
+  >
     {children}
   </BoxStyles>
 );

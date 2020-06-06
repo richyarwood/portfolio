@@ -37,7 +37,6 @@ const CardImage = styled(Img)`
 
 const CardTitle = styled.p`
   color: var(--white);
-  font-family: var(--condensedFont);
   font-size: 2rem;
   margin-bottom: var(--xs);
 `;
@@ -45,8 +44,7 @@ const CardTitle = styled.p`
 const CardDescription = styled.p`
   color: var(--white);
   font-size: 1.4rem;
-  font-weight: var(--regularFont);
-  font-family: var(--mainFont);
+  font-weight: var(--lightFont);
   line-height: 2.5rem;
   margin-bottom: var(--sm);
 `;

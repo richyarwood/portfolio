@@ -35,7 +35,6 @@ const TagStyles = styled.div`
 
   & > p {
     left: 50%;
-    font-family: var(--mainFont);
     font-size: 1rem;
     font-weight: 500;
     margin: 0;

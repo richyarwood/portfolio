@@ -44,7 +44,6 @@ const HeroTextContent = styled.div`
 
 const HeroText = styled.p`
   color: var(--white);
-  font-family: var(--mainFont);
   font-size: 1.6rem;
   margin-top: var(--md);
   line-height: 2.2rem;
