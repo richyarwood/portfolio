@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PageContext from '../context/PageContext';
 import { mq } from '../utils/presets';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import { PageWrapper, RightSideWrapper } from '../components/SectionWrappers';
 import Heading from '../components/Heading';
 import ExperienceBlock from '../components/ExperienceBlock';
@@ -11,6 +12,9 @@ import SkillsSideBar from '../components/SkillsSideBar';
 const Experience = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
     <Layout>
+      <SEO
+        title="Work and coding experience"
+      />
       <PageWrapper>
         <div
           css={`

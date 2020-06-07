@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PageContext from '../context/PageContext';
 import Layout from '../components/Layout';
-import SEO from '../components/seo';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import CardGrid from '../components/CardGrid';
 import Card from '../components/Card';

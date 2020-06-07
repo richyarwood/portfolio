@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PageContext from '../context/PageContext';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import CardGrid from '../components/CardGrid';
 import Card from '../components/Card';
 import Heading from '../components/Heading';
@@ -9,6 +10,9 @@ import Heading from '../components/Heading';
 const Posts = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
     <Layout>
+      <SEO
+        title="Latest posts"
+      />
       <div
         className="container"
       >

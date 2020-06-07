@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { mq } from '../utils/presets';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import { PageWrapper, RightSideWrapper } from '../components/SectionWrappers';
 import Heading from '../components/Heading';
 import Box from '../components/Box';
@@ -55,6 +56,9 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout>
+      <SEO
+        title={data.mdx.frontmatter.title}
+      />
       <PageWrapper>
         <div>
           {data.mdx.frontmatter.image && (

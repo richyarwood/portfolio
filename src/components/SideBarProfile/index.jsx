@@ -41,14 +41,16 @@ const SideBarProfile = () => {
         fluid={data.file.childImageSharp.fluid}
         alt="Richard Yarwood - Full Stack Javacript Developer"
       />
-      <Heading
-        as="h2"
-        center
-        color="var(--white)"
-        moreStyles={{ 'padding-top': 'var(--sm)' }}
+      <p
+        css={`
+          text-align: center;
+          color: var(--white);
+          padding-top: var(--sm);
+          font-size: var(--md);
+        `}
       >
         Richard Yarwood
-      </Heading>
+      </p>
     </SideBarProfileStyles>
   );
 };

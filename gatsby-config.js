@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Richard Yarwood - full stack JavaScript Developer',
+    title: 'Richard Yarwood - full stack JavaScript developer',
     menuItems: [
       {
         name: 'Home',

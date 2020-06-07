@@ -43,7 +43,6 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    /* Just so I can make the storybook background white! */
     background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
     margin: 0;
     font-family: 'Roboto Condensed';
