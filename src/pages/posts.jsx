@@ -22,7 +22,7 @@ const Posts = ({ data, location }) => (
           Posts
         </Heading>
         <CardGrid>
-          {data.allMdx.edges.map(({ node: post }) => (
+          {data.allMdx.nodes.map((post) => (
             <Card
               key={post.frontmatter.id}
               title={post.frontmatter.title}
@@ -40,25 +40,23 @@ const Posts = ({ data, location }) => (
 
 
 export const query = graphql`
-query CardGridQuery {
+query PostsPageQuery {
   allMdx(filter: {fields: {collection: {ne: "experience"}}}) {
-    edges {
-      node {
-        frontmatter {
-          id
-          slug
-          tags
-          title
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+    nodes {
+      frontmatter {
+        slug
+        tags
+        title
+        id
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
-        excerpt(truncate: true, pruneLength: 150)
       }
+      excerpt(truncate: true, pruneLength: 150)
     }
   }
 }

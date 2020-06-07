@@ -26,7 +26,7 @@ const IndexPage = ({ data, location }) => (
           Latest posts
         </Heading>
         <CardGrid>
-          {data.allMdx.edges.map(({ node: post }) => (
+          {data.allMdx.nodes.map((post) => (
             <Card
               key={post.frontmatter.id}
               title={post.frontmatter.title}
@@ -48,23 +48,21 @@ const IndexPage = ({ data, location }) => (
 export const query = graphql`
 query HomeLatestPosts {
   allMdx(limit: 4) {
-    edges {
-      node {
-        frontmatter {
-          id
-          slug
-          tags
-          title
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+    nodes {
+      frontmatter {
+        id
+        slug
+        tags
+        title
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
-        excerpt(truncate: true, pruneLength: 150)
       }
+      excerpt(truncate: true, pruneLength: 150)
     }
   }
 }
