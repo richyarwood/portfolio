@@ -35,7 +35,7 @@ const MobileHeader = ({ onClick, height }) => {
     query MobileHeaderQuery {
       file(relativePath: {eq: "richard-new-portfolio.jpg"}) {
         childImageSharp {
-          fixed(width: 20, height: 20) {
+          fixed(width: 30, height: 30) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -44,7 +44,7 @@ const MobileHeader = ({ onClick, height }) => {
   `);
 
   return (
-    <IconContext.Provider value={{ color: 'var(--white)', size: '20px' }}>
+    <IconContext.Provider value={{ color: 'var(--white)', size: '30px' }}>
       <MobileHeaderStyles
         height={height}
       >
@@ -64,7 +64,7 @@ const MobileHeader = ({ onClick, height }) => {
             css={`
             color: var(--white);
             font-weight: var(--regularFont);
-            font-size: var(--sm);
+            font-size: var(--md);
             margin-left: var(--xs);
           `}
           >

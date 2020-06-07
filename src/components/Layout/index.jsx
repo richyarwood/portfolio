@@ -10,7 +10,7 @@ import IconBlock from '../IconBlock';
 import MobileHeader from '../MobileHeader';
 
 const sideBarWidth = 150;
-const mobileBarHeight = 30;
+const mobileBarHeight = 60;
 
 const WrapperStyles = styled.div`
   display: flex;
