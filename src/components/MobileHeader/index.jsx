@@ -48,12 +48,30 @@ const MobileHeader = ({ onClick, height }) => {
       <MobileHeaderStyles
         height={height}
       >
-        <RoundImage
-          fixed={data.file.childImageSharp.fixed}
-          alt="Richard Yarwood - Full Stack Javacript Developer"
-          objectFit="cover"
-          objectPosition="50% 50%"
-        />
+        <div
+          css={`
+            display: flex;
+            align-items: center;
+          `}
+        >
+          <RoundImage
+            fixed={data.file.childImageSharp.fixed}
+            alt="Richard Yarwood - Full Stack Javacript Developer"
+            objectFit="cover"
+            objectPosition="50% 50%"
+          />
+          <p
+            css={`
+            color: var(--white);
+            font-weight: var(--regularFont);
+            font-size: var(--sm);
+            margin-left: var(--xs);
+          `}
+          >
+            Richard Yarwood
+          </p>
+
+        </div>
         <AiOutlineMenu
           onClick={onClick}
         />
