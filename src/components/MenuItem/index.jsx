@@ -52,8 +52,7 @@ const MenuItem = ({
       'aria-current': 'page',
     } : {}
   );
-
-  const pagePath = useContext(PageContext);
+  const pagePath = useContext(PageContext).replace(/(\/$)/, '');
 
   return (
     <MenuItemStyles

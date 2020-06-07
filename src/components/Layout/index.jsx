@@ -41,11 +41,12 @@ const SidebarStyles = styled.div`
 const MainStyles = styled.div`
   background-color: var(--darkGrey);
   height: 100vh;
-  padding-top: var(--xxl);
+  padding-top: calc(${mobileBarHeight}px + 10px);
   overflow-y: auto;
   width: 100%;
 
   ${mq.tablet}{
+    padding-top: var(--xxl);
     margin-left: calc(${sideBarWidth}px + 10px);
   }
 `;

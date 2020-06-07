@@ -31,31 +31,32 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages/`,
+        path: `${__dirname}/src/pages`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/posts/`,
+        path: `${__dirname}/src/posts`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: `${__dirname}/src/projects/`,
+        path: `${__dirname}/src/projects`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'experience',
-        path: `${__dirname}/src/experience/`,
+        path: `${__dirname}/src/experience`,
       },
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-remove-trailing-slashes',
   ],
 };
