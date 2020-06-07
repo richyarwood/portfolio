@@ -66,14 +66,16 @@ const PostTemplate = ({ data, location }) => {
             <Box
               dark
             >
-              <PostTags>
-                {tags.map((tag) => (
-                  <Tag
-                    key={tag}
-                    choice={tag}
-                  />
-                ))}
-              </PostTags>
+              {tags && (
+                <PostTags>
+                  {tags.map((tag) => (
+                    <Tag
+                      key={tag}
+                      choice={tag}
+                    />
+                  ))}
+                </PostTags>
+              )}
               <Heading
                 color="var(--white)"
                 moreStyles={{ 'padding-bottom': '20px' }}
