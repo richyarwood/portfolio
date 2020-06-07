@@ -17,7 +17,7 @@ const ExperienceLeftSide = styled.div`
 `;
 
 const ExperienceDivider = styled.div`
-  background-color: var(--jsxBlue);
+  background-color: var(--lightGrey);
   bottom: 0;
   left: 30%;
   position: absolute;
@@ -26,12 +26,12 @@ const ExperienceDivider = styled.div`
 
   :after {
     background-color: var(--darkGrey);
-    border: 3px solid var(--jsxBlue);
+    border: 2px solid var(--jsxBlue);
     border-radius: 10px;
     content: "";
     display: block;
     height: 11px;
-    margin-left: -8px;
+    margin-left: -7px;
     margin-top: 5px;
     width: 11px;
   }

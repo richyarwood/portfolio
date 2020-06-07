@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PageContext from '../context/PageContext';
+import { mq } from '../utils/presets';
 import Layout from '../components/Layout';
 import { PageWrapper, RightSideWrapper } from '../components/SectionWrappers';
 import Heading from '../components/Heading';
 import ExperienceBlock from '../components/ExperienceBlock';
-import Box from '../components/Box';
+import SkillsSideBar from '../components/SkillsSideBar';
 
 const Experience = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
@@ -13,7 +14,11 @@ const Experience = ({ data, location }) => (
       <PageWrapper>
         <div
           css={`
-            margin-left: var(--lg);
+            margin: 0 var(--md);
+
+            ${mq.tablet} {
+              margin: 0 var(--lg);
+            }
           `}
         >
           <Heading
@@ -26,20 +31,18 @@ const Experience = ({ data, location }) => (
             Experience
           </Heading>
 
-          {data.allMdx.edges.map(({ node: experience }) => (
+          {data.allMdx.nodes.map(({ frontmatter: experience }) => (
             <ExperienceBlock
-              key={experience.frontmatter.employment_period}
-              company={experience.frontmatter.company}
-              date={experience.frontmatter.employment_period}
-              title={experience.frontmatter.job_title}
-              summary={experience.frontmatter.experience_summary}
+              key={experience.employment_period}
+              company={experience.company}
+              date={experience.employment_period}
+              title={experience.job_title}
+              summary={experience.experience_summary}
             />
           ))}
         </div>
         <RightSideWrapper>
-          <Box>
-            Some text in here
-          </Box>
+          <SkillsSideBar />
         </RightSideWrapper>
       </PageWrapper>
     </Layout>
@@ -50,14 +53,12 @@ const Experience = ({ data, location }) => (
 export const query = graphql`
 query ExperienceQuery {
   allMdx(filter: {fields: {collection: {eq: "experience"}}}) {
-    edges {
-      node {
-        frontmatter {
-          company
-          employment_period
-          experience_summary
-          job_title
-        }
+    nodes {
+      frontmatter {
+        company
+        employment_period
+        experience_summary
+        job_title
       }
     }
   }
