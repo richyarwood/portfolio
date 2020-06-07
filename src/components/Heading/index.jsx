@@ -20,7 +20,7 @@ const horizontalLine = css`
 `;
 
 const HeadingStyles = styled.h1`
-  color: ${({ color }) => color && color};
+  color: ${({ color }) => (color && color ? color : 'var(--white)')};
   display: inline-block;
   font-size: ${headingSizes.h1}rem;
   font-size: ${({ as }) => as && `${headingSizes[as]}rem`};
