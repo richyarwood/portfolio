@@ -4,7 +4,11 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
-  description, lang, meta, title,
+  description,
+  lang,
+  meta,
+  title,
+  relativeUrl,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -65,7 +69,9 @@ function SEO({
           content: 'noindex, nofollow',
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="canonical" href={`https://richyarwood.co.uk${relativeUrl}`} />
+    </Helmet>
   );
 }
 

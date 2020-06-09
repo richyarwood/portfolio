@@ -21,7 +21,7 @@ async function getMdxForPosts({ actions, graphql }) {
     const { slug } = post.node.frontmatter;
     actions.createPage({
       path: `posts/${slug}`,
-      component: require.resolve('./src/templates/post.jsx'),
+      component: require.resolve('./src/templates/post-template.jsx'),
       context: {
         id,
         pathPrefix: '',

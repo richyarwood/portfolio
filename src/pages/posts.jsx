@@ -12,6 +12,7 @@ const Posts = ({ data, location }) => (
     <Layout>
       <SEO
         title="Latest posts"
+        relativeUrl={location.pathname}
       />
       <div
         className="container"

@@ -11,7 +11,10 @@ import Heading from '../components/Heading';
 const IndexPage = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        relativeUrl={location.pathname}
+      />
       <Hero />
       <div
         className="container"

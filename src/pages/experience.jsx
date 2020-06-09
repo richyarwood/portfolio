@@ -14,6 +14,7 @@ const Experience = ({ data, location }) => (
     <Layout>
       <SEO
         title="Work and coding experience"
+        relativeUrl={location.pathname}
       />
       <PageWrapper>
         <div

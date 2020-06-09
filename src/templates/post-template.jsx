@@ -58,6 +58,7 @@ const PostTemplate = ({ data, location }) => {
     <Layout>
       <SEO
         title={data.mdx.frontmatter.title}
+        relativeUrl={location.pathname}
       />
       <PageWrapper>
         <div>
@@ -115,6 +116,7 @@ query MyQuery($id: String!) {
       id
       title
       tags
+      slug
       image {
         childImageSharp {
           fluid {
