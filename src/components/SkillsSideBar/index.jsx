@@ -51,10 +51,10 @@ const SkillsSideBar = () => (
         Jest | Enzyme | React Testing Library | ArtilleryIO
       </SkillsParagraph>
       <SkillsHeading>
-        Supporting skills
+        Supporting
       </SkillsHeading>
       <SkillsParagraph>
-        BEM | Atomic Design | Git and GitHub | Sketch and Balsamiq wireframing
+        Storybook | BEM | Atomic Design | Git and GitHub | Sketch and Balsamiq wireframing
         | JIRA, Trello and Confluence | Google Analytics and Google Tag Manager
         | Domain Management
       </SkillsParagraph>

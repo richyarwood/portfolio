@@ -52,11 +52,11 @@ const MenuItem = ({
       'aria-current': 'page',
     } : {}
   );
-  const pagePath = useContext(PageContext).replace(/(\/$)/, '');
+  const pagePath = useContext(PageContext);
 
   return (
     <MenuItemStyles
-      className={pagePath === url ? 'active' : ''}
+      className={pagePath.replace(/(\/$)/, '') === url.replace(/(\/$)/, '') ? 'active' : ''}
       to={url}
       role="menuitem"
       getProps={isActive}

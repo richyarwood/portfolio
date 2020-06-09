@@ -15,13 +15,16 @@ const mobileBarHeight = 60;
 const WrapperStyles = styled.div`
   display: flex;
   flex-direction: row;
+  max-width: 2000px;
+  margin: 0 auto;
+  position: relative;
 `;
 
 const SidebarStyles = styled.div`
   background-color: var(--darkGrey);
   height: 100vh;
   left: -${sideBarWidth}px;
-  position: fixed;
+  position: absolute;
   top: ${mobileBarHeight}px;
   transition: all 0.2s ease-in-out;
   width: ${sideBarWidth}px;

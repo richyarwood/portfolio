@@ -9,13 +9,18 @@ import Heading from '../Heading';
 const HeroStyles = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: auto;
   margin-bottom: var(--lg);
+  min-height: auto;
+  max-height: auto;
 
   ${mq.desktop} {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: var(--xxl);
+  }
+
+  ${mq.xl} {
+    max-height: 550px;
   }
 `;
 
@@ -28,10 +33,9 @@ const HeroImage = styled(Img)`
 `;
 
 const HeroTextWrapper = styled.div`
-  width: 100%;
   background-color: var(--lightGrey);
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0 5%;
+  width: 100%;
 
   ${mq.desktop} {
     width: 50%;
@@ -39,15 +43,19 @@ const HeroTextWrapper = styled.div`
 `;
 
 const HeroTextContent = styled.div`
-  padding: var(--lg);
+  padding: var(--lg) 0;
 `;
 
-const HeroText = styled.p`
+const HeroText = styled.div`
   color: var(--white);
-  font-size: 1.6rem;
+  font-size: 2rem;
+  font-weight: var(--lightFont);
+  line-height: 2.5rem;
   margin-top: var(--md);
-  line-height: 2.2rem;
-  font-weight: var(--regular);
+
+  > p {
+    padding-bottom: var(--xs);
+  }
 `;
 
 const Hero = () => {
@@ -83,8 +91,26 @@ const Hero = () => {
             Full Stack JavaScript Developer
           </Heading>
           <HeroText>
-            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in feugiat libero, id vehicula orci. Suspendisse vitae mi nibh. Aenean fermentum vehicula sem tristique fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin lacinia faucibus neque id tristique.
-            Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin lacinia faucibus neque id tristique.`}
+            <p>
+              My lifelong interest in computing and technology started as a child
+              when I was the proud owner of a Sinclair ZX81, one of the first home
+              computers on general sale.
+            </p>
+            <p>
+              Working in the tech and education industry for more than 10 years,
+              I discovered that coding excited me and I wanted
+              to learn more. This soon turned in to a desire to pursue this as a new
+              career and I completed an immersive software engineering course with
+              General Assembly.
+            </p>
+            <p>
+              I use HTML, CSS and JavaScript with a focus on React and Node.
+            </p>
+            <p>
+              I now work in London for a large media company and part of
+              large digital team which manage more than 20 websites, with brands
+              such as BBC Good Food, Radio Times and Bike Radar.
+            </p>
           </HeroText>
         </HeroTextContent>
       </HeroTextWrapper>

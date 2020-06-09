@@ -9,30 +9,18 @@ const headingSizes = {
   h4: 1.5,
 };
 
-const horizontalLine = css`
-  content: '';
-    background-color: var(--jsxBlue);
-    bottom: -6px;
-    height: 2px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-`;
-
 const HeadingStyles = styled.h1`
+  border-bottom: ${({ underlined }) => underlined && '2px solid var(--jsxBlue)'};
   color: ${({ color }) => (color && color ? color : 'var(--white)')};
-  display: inline-block;
+  display: ${({ underlined }) => (underlined ? 'inline-block' : '')};
   font-size: ${headingSizes.h1}rem;
   font-size: ${({ as }) => as && `${headingSizes[as]}rem`};
   line-height: initial;
   margin: 0;
+  padding-bottom: ${({ underlined }) => (underlined ? 'var(--xxs)' : '')};
   position: relative;
   text-align: ${({ center }) => center && 'center'};
   ${({ moreStyles }) => moreStyles && moreStyles};
-
-  & :after {
-    ${({ underlined }) => underlined && horizontalLine};
-  }
 
   ${mq.tablet} {
     margin-left: ${({ marginLeft }) => marginLeft && 'var(--md)'};
