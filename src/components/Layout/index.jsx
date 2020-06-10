@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import GlobalStyles from '../../utils/GlobalStyles';
 import { mq } from '../../utils/presets';
+import Gtm from '../GTM';
 import VerticalNav from '../VerticalNav';
 import SideBarProfile from '../SideBarProfile';
 import IconBlock from '../IconBlock';

@@ -12,7 +12,7 @@ const IndexPage = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
     <Layout>
       <SEO
-        title="Home"
+        title="Full Stack JavaScript Developer"
         relativeUrl={location.pathname}
       />
       <Hero />

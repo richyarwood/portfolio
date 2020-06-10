@@ -58,5 +58,12 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-remove-trailing-slashes',
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-K8FF55D',
+        includeInDevelopment: true,
+      },
+    },
   ],
 };
