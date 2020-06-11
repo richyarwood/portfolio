@@ -16,7 +16,7 @@ const mobileBarHeight = 60;
 const WrapperStyles = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 2000px;
+  max-width: 1440px;
   margin: 0 auto;
   position: relative;
 `;

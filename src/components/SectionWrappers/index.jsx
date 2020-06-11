@@ -7,8 +7,9 @@ const PageWrapperStyles = styled.div`
   flex-direction: row;
 
   > div:first-child {
-    width: 100%;
-    max-width: 800px;
+    /* width: 100%; */
+    max-width: 100%;
+    min-width: 500px;
   }
 `;
 
@@ -21,6 +22,7 @@ ${mq.desktop} {
   height: 100vh;
   margin: 0 var(--md);
   max-width: 300px;
+  width:100%;
 }
 `;
 
