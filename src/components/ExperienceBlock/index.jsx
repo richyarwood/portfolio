@@ -52,7 +52,8 @@ const ExperienceBlock = ({
   <ExperienceItemWrapper>
     <ExperienceLeftSide>
       <Heading
-        as="h3"
+        as="h2"
+        styledAs="2"
         color="var(--jsxBlue)"
       >
         {date}
@@ -69,8 +70,9 @@ const ExperienceBlock = ({
     <ExperienceDivider />
     <ExperienceRightSide>
       <Heading
-        as="h3"
+        as="h2"
         color="var(--jsxBlue)"
+        styledAs="2"
       >
         {title}
       </Heading>

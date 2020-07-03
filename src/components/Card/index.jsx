@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { mq } from '../../utils/presets';
 import Tag from '../Tag';
+import Heading from '../Heading';
 
 const CardWrapper = styled.div`
 
@@ -21,9 +22,18 @@ const CardWrapper = styled.div`
 const CardBody = styled.div`
   background-color: var(--lightGrey);
   border-radius: 5px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   margin-bottom: var(--lg);
+  min-height: 400px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
   width: auto;
+
+  :hover {
+    transform: scale(1.01);
+    box-shadow: 3px 0px 4px 2px rgba(0,0,0,0.2);
+  }
 
   ${mq.tablet} {
     margin : 0 var(--sm) var(--xl) var(--sm);
@@ -35,10 +45,11 @@ const CardImage = styled(Img)`
   width: 100%;
 `;
 
-const CardTitle = styled.p`
-  color: var(--white);
-  font-size: 2rem;
-  margin-bottom: var(--xs);
+const CardContent = styled.div`
+  padding: var(--md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 `;
 
 const CardDescription = styled.p`
@@ -46,14 +57,13 @@ const CardDescription = styled.p`
   font-size: 1.4rem;
   font-weight: var(--lightFont);
   line-height: 2.5rem;
-  margin-bottom: var(--sm);
 `;
 
 const CardTags = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: var(--xs);
+  margin-top: auto;
 
   & > div:not(:last-child) {
     margin-right: var(--xxs);
@@ -78,13 +88,15 @@ const Card = ({
           objectFit="cover"
           objectPosition="50% 50%"
         />
-        <div css={`
-      padding: var(--md);
-    `}
-        >
-          <CardTitle>
+        <CardContent>
+          <Heading
+            as="h3"
+            styledAs="2"
+            color="var(--white)"
+            moreStyles={{ 'margin-bottom': 'var(--xs)' }}
+          >
             {title}
-          </CardTitle>
+          </Heading>
           <CardDescription>
             {description}
           </CardDescription>
@@ -96,7 +108,7 @@ const Card = ({
               />
             ))}
           </CardTags>
-        </div>
+        </CardContent>
       </CardBody>
     </Link>
   </CardWrapper>

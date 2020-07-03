@@ -15,6 +15,7 @@ const Experience = ({ data, location }) => (
       <SEO
         title="Work and coding experience"
         relativeUrl={location.pathname}
+        description="Read about my career, skills and experience in digital development."
       />
       <PageWrapper>
         <div
@@ -33,7 +34,7 @@ const Experience = ({ data, location }) => (
             marginLeft
             moreStyles={{ 'margin-bottom': 'var(--lg)' }}
           >
-            Experience
+            Work Experience and Programming Skills
           </Heading>
 
           {data.allMdx.nodes.map(({ frontmatter: experience }) => (
@@ -57,7 +58,7 @@ const Experience = ({ data, location }) => (
 
 export const query = graphql`
 query ExperienceQuery {
-  allMdx(filter: {fields: {collection: {eq: "experience"}}}) {
+  allMdx(filter: {fields: {collection: {eq: "experience"}}}, sort: {fields: frontmatter___start, order: DESC}) {
     nodes {
       frontmatter {
         company
