@@ -11,8 +11,9 @@ const Posts = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
     <Layout>
       <SEO
-        title="Latest posts"
+        title="Latest posts and programming tips"
         relativeUrl={location.pathname}
+        description="Some of my experiences coding and top tips for coding in JavaScript, React, HTML and CSS, plus more."
       />
       <div
         className="container"
@@ -24,7 +25,7 @@ const Posts = ({ data, location }) => (
           marginLeft
           moreStyles={{ 'margin-bottom': 'var(--lg)' }}
         >
-          Posts
+          Latest posts and programming tips
         </Heading>
         <CardGrid>
           {data.allMdx.nodes.map((post) => (

@@ -46,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
     margin: 0;
     font-family: 'Roboto Condensed';
+    font-weight: var(--lightFont);
   }
 
   p {

@@ -10,7 +10,9 @@ import Heading from '../components/Heading';
 
 const IndexPage = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
-    <Layout>
+    <Layout
+      noPaddingTop
+    >
       <SEO
         title="Full Stack JavaScript Developer"
         relativeUrl={location.pathname}

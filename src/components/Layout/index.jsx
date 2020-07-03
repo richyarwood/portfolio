@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import GlobalStyles from '../../utils/GlobalStyles';
 import { mq } from '../../utils/presets';
-import Gtm from '../GTM';
 import VerticalNav from '../VerticalNav';
 import SideBarProfile from '../SideBarProfile';
 import IconBlock from '../IconBlock';
@@ -50,12 +49,15 @@ const MainStyles = styled.div`
   width: 100%;
 
   ${mq.tablet}{
-    padding-top: var(--xxl);
+    padding-top: ${({ noPaddingTop }) => (noPaddingTop && noPaddingTop ? '0' : '4rem')};
     margin-left: calc(${sideBarWidth}px + 10px);
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({
+  children,
+  noPaddingTop,
+}) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const data = useStaticQuery(graphql`
   query SiteMetaQuery {
@@ -91,7 +93,9 @@ const Layout = ({ children }) => {
           </nav>
           <IconBlock />
         </SidebarStyles>
-        <MainStyles>
+        <MainStyles
+          noPaddingTop={noPaddingTop}
+        >
           {children}
         </MainStyles>
       </WrapperStyles>

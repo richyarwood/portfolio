@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { mq } from '../../utils/presets';
 
 const headingSizes = {
@@ -15,6 +15,7 @@ const HeadingStyles = styled.h1`
   display: ${({ underlined }) => (underlined ? 'inline-block' : '')};
   font-size: ${headingSizes.h1}rem;
   font-size: ${({ as }) => as && `${headingSizes[as]}rem`};
+  font-size: ${({ styledAs }) => styledAs && `${styledAs}rem`};
   line-height: initial;
   margin: 0;
   padding-bottom: ${({ underlined }) => (underlined ? 'var(--xxs)' : '')};
@@ -35,6 +36,7 @@ const Heading = ({
   marginLeft,
   moreStyles,
   underlined,
+  styledAs,
 }) => (
   <HeadingStyles
     as={as}
@@ -43,6 +45,7 @@ const Heading = ({
     marginLeft={marginLeft}
     moreStyles={moreStyles}
     underlined={underlined}
+    styledAs={styledAs}
   >
     {children}
   </HeadingStyles>
