@@ -25,11 +25,7 @@ const SkillsHeading = ({ children }) => (
 const SkillsSideBar = () => (
   <>
     <Box>
-      <Heading
-        as="h3"
-        underlined
-        color="var(--white)"
-      >
+      <Heading as="h3" underlined color="var(--white)">
         Core skills
       </Heading>
       <Heading
@@ -44,48 +40,33 @@ const SkillsSideBar = () => (
       <SkillsParagraph>
         JavaScript | React | Nodejs | Express | Sass | Gatsbyjs | GraphQL
       </SkillsParagraph>
-      <SkillsHeading>
-        Testing
-      </SkillsHeading>
+      <SkillsHeading>Testing</SkillsHeading>
       <SkillsParagraph>
         Jest | Enzyme | React Testing Library | ArtilleryIO
       </SkillsParagraph>
-      <SkillsHeading>
-        Supporting
-      </SkillsHeading>
+      <SkillsHeading>Supporting</SkillsHeading>
       <SkillsParagraph>
-        Storybook | BEM | Atomic Design | Git and GitHub | Sketch and Balsamiq wireframing
-        | JIRA, Trello and Confluence | Google Analytics and Google Tag Manager
-        | Domain Management
+        Storybook | BEM | Atomic Design | Git and GitHub | Sketch and Balsamiq
+        wireframing | JIRA, Trello and Confluence | Google Analytics and Google
+        Tag Manager | Domain Management
       </SkillsParagraph>
-      <SkillsHeading>
-        Workflow and soft skills
-      </SkillsHeading>
+      <SkillsHeading>Workflow and soft skills</SkillsHeading>
       <SkillsParagraph>
         Code reviews | Pair programming | Agile development and Scrum |
-        Excellent verbal and written communication | Collaborative
-        working and used to working with multidisciplinary teams | Presentation skills
+        Excellent verbal and written communication | Collaborative working and
+        used to working with multidisciplinary teams | Presentation skills
       </SkillsParagraph>
     </Box>
     <Box>
-      <Heading
-        as="h3"
-        underlined
-      >
+      <Heading as="h3" underlined>
         Working knowledge
       </Heading>
-      <SkillsHeading>
-        Technologies and frameworks
-      </SkillsHeading>
+      <SkillsHeading>Technologies and frameworks</SkillsHeading>
       <SkillsParagraph>
         Python | Django | MongoDB | PostgreSQL | Flask
       </SkillsParagraph>
-      <SkillsHeading>
-        Testing
-      </SkillsHeading>
-      <SkillsParagraph>
-        Cypress | WebDriverIO
-      </SkillsParagraph>
+      <SkillsHeading>Testing</SkillsHeading>
+      <SkillsParagraph>Cypress | WebDriverIO</SkillsParagraph>
     </Box>
   </>
 );

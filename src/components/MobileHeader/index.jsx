@@ -9,7 +9,7 @@ import { mq } from '../../utils/presets';
 const MobileHeaderStyles = styled.div`
   height: ${({ height }) => height && `${height}px`};
   background-color: var(--darkGrey);
-  box-shadow: 3px 1px 4px -1px rgba(0,0,0,0.7);
+  box-shadow: 3px 1px 4px -1px rgba(0, 0, 0, 0.7);
   padding: 0.5rem 1.5rem;
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@ const RoundImage = styled(Img)`
 const MobileHeader = ({ onClick, height }) => {
   const data = useStaticQuery(graphql`
     query MobileHeaderQuery {
-      file(relativePath: {eq: "richard-new-portfolio.jpg"}) {
+      file(relativePath: { eq: "richard-new-portfolio.jpg" }) {
         childImageSharp {
           fixed(width: 30, height: 30) {
             ...GatsbyImageSharpFixed
@@ -45,9 +45,7 @@ const MobileHeader = ({ onClick, height }) => {
 
   return (
     <IconContext.Provider value={{ color: 'var(--white)', size: '30px' }}>
-      <MobileHeaderStyles
-        height={height}
-      >
+      <MobileHeaderStyles height={height}>
         <div
           css={`
             display: flex;
@@ -62,19 +60,18 @@ const MobileHeader = ({ onClick, height }) => {
           />
           <p
             css={`
-            color: var(--white);
-            font-weight: var(--regularFont);
-            font-size: var(--md);
-            margin-left: var(--xs);
-          `}
+              color: var(--white);
+              font-weight: var(--regularFont);
+              font-family: var(--mainFont);
+              font-size: var(--md);
+              margin-left: var(--xs);
+              margin-bottom: 0;
+            `}
           >
             Richard Yarwood
           </p>
-
         </div>
-        <AiOutlineMenu
-          onClick={onClick}
-        />
+        <AiOutlineMenu onClick={onClick} />
       </MobileHeaderStyles>
     </IconContext.Provider>
   );

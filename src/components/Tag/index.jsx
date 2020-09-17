@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const tagChoice = (choice) => {
   switch (choice) {
-  case 'jsx':
+  case 'react':
     return {
-      color: 'var(--jsxBlue)',
+      color: 'var(--reactBlue)',
     };
   case 'html':
     return {
@@ -19,39 +19,36 @@ const tagChoice = (choice) => {
     return {
       color: 'var(--jsYellow)',
     };
+  case 'postgresql':
+    return {
+      color: 'var(--postgresqlBlue)',
+    };
+  case 'python':
+    return {
+      color: 'var(--pythonBlue)',
+    };
   default:
     return {};
   }
 };
 
 const TagStyles = styled.div`
-  height:1.8rem;
-  width: 40px;
+  height: 2rem;
+  min-width: 40px;
   text-align: center;
   background-color: ${({ choice }) => choice && choice.color};
   color: var(--black);
   border-radius: 3px;
-  position: relative;
-
-  & > p {
-    left: 50%;
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0;
-    position: absolute;
-    text-transform: uppercase;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+  padding: 3px 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
 `;
 
 const Tag = ({ choice }) => (
-  <TagStyles
-    choice={tagChoice(choice)}
-  >
-    <p>
-      {choice}
-    </p>
+  <TagStyles choice={tagChoice(choice)}>
+    <span>{choice}</span>
   </TagStyles>
 );
 

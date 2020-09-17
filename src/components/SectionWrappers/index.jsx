@@ -7,33 +7,27 @@ const PageWrapperStyles = styled.div`
   flex-direction: row;
 
   > div:first-child {
-    /* width: 100%; */
-    max-width: 100%;
-    min-width: 500px;
+    width: 800px;
   }
 `;
 
 const RightSideWrapperStyles = styled.div`
   display: none;
 
-${mq.desktop} {
-  display: block;
-  min-width: 250px;
-  height: 100vh;
-  margin: 0 var(--md);
-  max-width: 300px;
-  width:100%;
-}
+  ${mq.desktop} {
+    display: block;
+    min-width: 250px;
+    height: 100vh;
+    margin: 0 var(--md);
+    max-width: 300px;
+    width: 100%;
+  }
 `;
 
 export const PageWrapper = ({ children }) => (
-  <PageWrapperStyles>
-    {children}
-  </PageWrapperStyles>
+  <PageWrapperStyles>{children}</PageWrapperStyles>
 );
 
 export const RightSideWrapper = ({ children }) => (
-  <RightSideWrapperStyles>
-    {children}
-  </RightSideWrapperStyles>
+  <RightSideWrapperStyles>{children}</RightSideWrapperStyles>
 );

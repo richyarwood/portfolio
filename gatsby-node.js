@@ -1,20 +1,21 @@
 // GET all posts
 async function getMdxForPosts({ actions, graphql }) {
   const { data } = await graphql(`
-  query MyQuery {
-    allMdx {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
+    query MyQuery {
+      allMdx {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+              tags
+            }
+            body
+            id
           }
-          body
-          id
         }
       }
     }
-  }
   `);
   data.allMdx.edges.forEach((post) => {
     const { id } = post.node;
@@ -30,11 +31,8 @@ async function getMdxForPosts({ actions, graphql }) {
   });
 }
 
-
 exports.createPages = async ({ graphql, actions }) => {
-  await Promise.all([
-    getMdxForPosts({ graphql, actions }),
-  ]);
+  await Promise.all([getMdxForPosts({ graphql, actions })]);
 };
 
 // Create additional fields for GraphQl query

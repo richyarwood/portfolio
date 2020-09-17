@@ -10,17 +10,13 @@ import Heading from '../components/Heading';
 
 const IndexPage = ({ data, location }) => (
   <PageContext.Provider value={location.pathname}>
-    <Layout
-      noPaddingTop
-    >
+    <Layout noPaddingTop>
       <SEO
         title="Full Stack JavaScript Developer"
         relativeUrl={location.pathname}
       />
       <Hero />
-      <div
-        className="container"
-      >
+      <div className="container">
         <Heading
           as="h2"
           underlined
@@ -28,49 +24,53 @@ const IndexPage = ({ data, location }) => (
           marginLeft="var(--md)"
           moreStyles={{ 'margin-bottom': 'var(--lg)' }}
         >
-          Latest posts
+          Latest posts and projects
         </Heading>
-        <CardGrid>
-          {data.allMdx.nodes.map((post) => (
-            <Card
-              key={post.frontmatter.id}
-              title={post.frontmatter.title}
-              tags={post.frontmatter.tags}
-              image={post.frontmatter.image.childImageSharp.fluid}
-              description={post.excerpt}
-              cardUrl={`/posts/${post.frontmatter.slug}`}
-            />
-          ))}
-        </CardGrid>
-
+        {data && (
+          <CardGrid>
+            {data.allMdx.nodes.map((post) => (
+              <Card
+                key={post.id}
+                title={post.frontmatter?.title}
+                tags={post.frontmatter?.tags}
+                image={post.frontmatter?.image?.childImageSharp?.fluid}
+                description={post.frontmatter?.excerpt}
+                cardUrl={`/posts/${post.frontmatter?.slug}`}
+                date={post.frontmatter?.date}
+              />
+            ))}
+          </CardGrid>
+        )}
       </div>
     </Layout>
   </PageContext.Provider>
-
 );
 
-
 export const query = graphql`
-query HomeLatestPosts {
-  allMdx(limit: 4) {
-    nodes {
-      frontmatter {
-        id
-        slug
-        tags
-        title
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+  query HomeLatestPosts {
+    allMdx(
+      filter: { fields: { collection: { regex: "/posts|projects/" } } }
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
+      nodes {
+        frontmatter {
+          slug
+          tags
+          title
+          excerpt
+          date
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
+        id
       }
-      excerpt(truncate: true, pruneLength: 150)
     }
   }
-}
 `;
 
 export default IndexPage;

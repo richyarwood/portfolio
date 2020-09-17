@@ -16,12 +16,10 @@ const PostBody = styled.div`
   font-size: var(--md);
   color: var(--white);
   font-weight: var(--lightFont);
-  line-height: 30px;
   margin: var(--sm);
   transform: translateY(-100px);
 
   & p {
-    margin-bottom: var(--md);
   }
 
   ${mq.desktop} {
@@ -36,14 +34,14 @@ const PostImage = styled(Img)`
 `;
 
 const PostTags = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-padding-bottom: var(--lg);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: var(--lg);
 
-& > div:not(:last-child) {
-  margin-right: var(--xxs);
-}
+  & > div:not(:last-child) {
+    margin-right: var(--xxs);
+  }
 `;
 
 const PostTemplate = ({ data, location }) => {
@@ -56,10 +54,7 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout>
-      <SEO
-        title={data.mdx.frontmatter.title}
-        relativeUrl={location.pathname}
-      />
+      <SEO title={data.mdx.frontmatter.title} relativeUrl={location.pathname} />
       <PageWrapper>
         <div>
           {data.mdx.frontmatter.image && (
@@ -68,16 +63,11 @@ const PostTemplate = ({ data, location }) => {
             />
           )}
           <PostBody>
-            <Box
-              dark
-            >
+            <Box dark>
               {tags && (
                 <PostTags>
                   {tags.map((tag) => (
-                    <Tag
-                      key={tag}
-                      choice={tag}
-                    />
+                    <Tag key={tag} choice={tag} />
                   ))}
                 </PostTags>
               )}
@@ -87,9 +77,7 @@ const PostTemplate = ({ data, location }) => {
               >
                 {title}
               </Heading>
-              <MDXRenderer>
-                {data.mdx.body}
-              </MDXRenderer>
+              <MDXRenderer>{data.mdx.body}</MDXRenderer>
             </Box>
           </PostBody>
         </div>
@@ -109,48 +97,54 @@ const PostTemplate = ({ data, location }) => {
 };
 
 export const query = graphql`
-query MyQuery($id: String!) {
-  mdx(id: {eq: $id}) {
-    body
-    frontmatter {
-      id
-      title
-      tags
-      slug
-      image {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+  query MyQuery($id: String!) {
+    mdx(id: { eq: $id }) {
+      body
+      frontmatter {
+        title
+        tags
+        slug
+        date
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    posts: allMdx(
+      limit: 10
+      filter: { fields: { collection: { eq: "posts" } } }
+      sort: { order: ASC, fields: frontmatter___date }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            tags
+          }
+        }
+      }
+    }
+    projects: allMdx(
+      limit: 10
+      filter: { fields: { collection: { eq: "projects" } } }
+      sort: { order: ASC, fields: frontmatter___date }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            title
+            tags
           }
         }
       }
     }
   }
-  posts: allMdx(limit: 10, filter: {fields: {collection: {eq: "posts"}}}) {
-    edges {
-      node {
-        frontmatter {
-          id
-          slug
-          title
-          tags
-        }
-      }
-    }
-  }
-  projects: allMdx(limit: 10, filter: {fields: {collection: {eq: "projects"}}}) {
-    edges {
-      node {
-        frontmatter {
-          id
-          slug
-          title
-          tags
-        }
-      }
-    }
-  }
-}
 `;
 
 export default PostTemplate;

@@ -10,15 +10,9 @@ const VerticalNavStyles = styled.ul`
 `;
 
 const VerticalNav = ({ menuItems }) => (
-  <VerticalNavStyles
-    role="menubar"
-  >
+  <VerticalNavStyles role="menubar">
     {menuItems.map((item) => (
-      <MenuItem
-        text={item.name}
-        url={item.link}
-        key={item.name}
-      />
+      <MenuItem text={item.name} url={item.link} key={item.name} />
     ))}
   </VerticalNavStyles>
 );

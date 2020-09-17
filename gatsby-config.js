@@ -7,8 +7,8 @@ module.exports = {
         link: '/',
       },
       {
-        name: 'Posts',
-        link: '/posts',
+        name: 'Projects',
+        link: '/projects',
       },
       {
         name: 'Experience',

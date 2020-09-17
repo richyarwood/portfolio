@@ -17,11 +17,7 @@ const BoxStyles = styled.div`
 `;
 
 const Box = ({ children, dark }) => (
-  <BoxStyles
-    dark={dark}
-  >
-    {children}
-  </BoxStyles>
+  <BoxStyles dark={dark}>{children}</BoxStyles>
 );
 
 export default Box;

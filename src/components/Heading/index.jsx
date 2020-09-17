@@ -2,19 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { mq } from '../../utils/presets';
 
-const headingSizes = {
-  h1: 4,
-  h2: 2.5,
-  h3: 2,
-  h4: 1.5,
-};
-
 const HeadingStyles = styled.h1`
-  border-bottom: ${({ underlined }) => underlined && '2px solid var(--jsxBlue)'};
+  border-bottom: ${({ underlined }) => underlined && '2px solid var(--reactBlue)'};
   color: ${({ color }) => (color && color ? color : 'var(--white)')};
   display: ${({ underlined }) => (underlined ? 'inline-block' : '')};
-  font-size: ${headingSizes.h1}rem;
-  font-size: ${({ as }) => as && `${headingSizes[as]}rem`};
+  font-family: var(--mainFont);
   font-size: ${({ styledAs }) => styledAs && `${styledAs}rem`};
   line-height: initial;
   margin: 0;

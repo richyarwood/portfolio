@@ -3,12 +3,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { mq } from '../../utils/presets';
-import Heading from '../Heading';
 
 const SideBarProfileStyles = styled.div`
   display: none;
+  font-family: var(--mainFont);
 
-  ${mq.tablet}{
+  ${mq.tablet} {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ const RoundImage = styled(Img)`
 const SideBarProfile = () => {
   const data = useStaticQuery(graphql`
     query ProfileImageQuery {
-      file(relativePath: {eq: "richard-new-portfolio-square.jpg"}) {
+      file(relativePath: { eq: "richard-new-portfolio-square.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

@@ -5,17 +5,17 @@ import Img from 'gatsby-image';
 import { mq } from '../../utils/presets';
 import Tag from '../Tag';
 import Heading from '../Heading';
+import Date from '../Date';
 
 const CardWrapper = styled.div`
-
   ${mq.tablet} {
-  flex-basis: 50%;
-  max-width: 50%;
-}
+    flex-basis: 50%;
+    max-width: 50%;
+  }
 
   ${mq.xl} {
-  flex-basis: 25%;
-  max-width: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
   }
 `;
 
@@ -25,18 +25,13 @@ const CardBody = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: var(--lg);
-  min-height: 400px;
+  min-height: 450px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   width: auto;
 
-  :hover {
-    transform: scale(1.01);
-    box-shadow: 3px 0px 4px 2px rgba(0,0,0,0.2);
-  }
-
   ${mq.tablet} {
-    margin : 0 var(--sm) var(--xl) var(--sm);
+    margin: 0 var(--sm) var(--xl) var(--sm);
   }
 `;
 
@@ -71,16 +66,10 @@ const CardTags = styled.div`
 `;
 
 const Card = ({
-  description,
-  image,
-  tags,
-  title,
-  cardUrl,
+  description, image, tags, title, cardUrl, date,
 }) => (
   <CardWrapper>
-    <Link
-      to={cardUrl}
-    >
+    <Link to={cardUrl}>
       <CardBody>
         <CardImage
           fluid={image}
@@ -89,6 +78,7 @@ const Card = ({
           objectPosition="50% 50%"
         />
         <CardContent>
+          <Date date={date} />
           <Heading
             as="h3"
             styledAs="2"
@@ -97,22 +87,14 @@ const Card = ({
           >
             {title}
           </Heading>
-          <CardDescription>
-            {description}
-          </CardDescription>
+          <CardDescription>{description}</CardDescription>
           <CardTags>
-            {tags.map((tag) => (
-              <Tag
-                key={tag}
-                choice={tag}
-              />
-            ))}
+            {tags && tags.map((tag) => <Tag key={tag} choice={tag} />)}
           </CardTags>
         </CardContent>
       </CardBody>
     </Link>
   </CardWrapper>
 );
-
 
 export default Card;

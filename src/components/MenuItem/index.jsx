@@ -8,7 +8,7 @@ const verticalLine = css`
   height: 100%;
   top: 0;
   right: 0;
-  background-color: var(--jsxBlue);
+  background-color: var(--reactBlue);
   width: 5px;
   position: absolute;
 `;
@@ -19,6 +19,7 @@ const MenuItemStyles = styled(Link)`
   border-top: 1px solid var(--lightGrey);
   color: var(--white);
   display: flex;
+  font-family: var(--mainFont);
   font-size: 1.8rem;
   justify-content: center;
   max-width: 150px;
@@ -43,20 +44,21 @@ const MenuItemStyles = styled(Link)`
   }
 `;
 
-const MenuItem = ({
-  text,
-  url,
-}) => {
-  const isActive = ({ isCurrent }) => (
-    isCurrent ? {
+const MenuItem = ({ text, url }) => {
+  const isActive = ({ isCurrent }) => (isCurrent
+    ? {
       'aria-current': 'page',
-    } : {}
-  );
+    }
+    : {});
   const pagePath = useContext(PageContext);
 
   return (
     <MenuItemStyles
-      className={pagePath.replace(/(\/$)/, '') === url.replace(/(\/$)/, '') ? 'active' : ''}
+      className={
+        pagePath.replace(/(\/$)/, '') === url.replace(/(\/$)/, '')
+          ? 'active'
+          : ''
+      }
       to={url}
       role="menuitem"
       getProps={isActive}

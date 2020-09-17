@@ -1,23 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
 import 'typeface-roboto-condensed';
+import 'typeface-muli';
 import { mq } from './presets';
 
 const GlobalStyles = createGlobalStyle`
   /* Color palette */
   :root {
     --black: #000000;
-    --lightGrey: #5C5756;
     --cssOrange: #ffa000;
-    --darkGrey: #282828;
-    --white: #ffffff;
+    --darkGrey: #1b1b1b;
     --htmlGreen: #15a710;
-    --jsxBlue: #3eacf7;
+    --reactBlue: #3eacf7;
     --jsYellow: #f7df1e;
+    --lightGrey: #2f2f2f;
+    --white: #ffffff;
+    --pythonBlue: #356d9c;
+    --postgresqlBlue: #2e5e8e;
   }
   /* Fonts */
   :root {
-    /* --condensedFont: 'Roboto Condensed';
-    --mainFont: 'Roboto Condensed'; */
+    --mainFont: 'Roboto Condensed';
+    --secondaryFont: 'Muli';
     --lightFont: 200;
     --regularFont: 400;
     --boldFont: 600;
@@ -42,19 +45,50 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
+  // TODO remove background color property?
   body {
     background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
     margin: 0;
-    font-family: 'Roboto Condensed';
+    font-family: 'Muli';
     font-weight: var(--lightFont);
   }
 
-  p {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  p, ul, ol {
     margin: 0;
+    font-size: 1.6rem;
+    line-height: 30px;
+    margin-bottom: var(--md);
+  }
+
+  p > code {
+    padding: 2px;
+    margin: 0 3px;
+    border-radius: 2px;
+    font-size: 1.6rem;
+    background-color: #888888;
+    color: #000000;
   }
 
   a {
     text-decoration: none;
+    color: var(--reactBlue);
+    cursor: pointer;
   }
 
   .container {

@@ -17,9 +17,5 @@ const components = {
 
 // eslint-disable-next-line import/prefer-default-export
 export const wrapRootElement = ({ element }) => (
-  <MDXProvider
-    components={components}
-  >
-    {element}
-  </MDXProvider>
+  <MDXProvider components={components}>{element}</MDXProvider>
 );

@@ -22,10 +22,7 @@ const SideBarWidget = ({ heading, items }) => (
       {heading}
     </Heading>
     {items.map((item) => (
-      <PostLink
-        key={item.id}
-        to={`/posts/${item.slug}`}
-      >
+      <PostLink key={item.id} to={`/posts/${item.slug}`}>
         {item.title}
       </PostLink>
     ))}

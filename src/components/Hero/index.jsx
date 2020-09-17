@@ -40,7 +40,7 @@ const HeroTextWrapper = styled.div`
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query HeroImageQuery {
-      file(relativePath: {eq: "hero-image.jpg"}) {
+      file(relativePath: { eq: "hero-image.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -58,17 +58,10 @@ const Hero = () => {
       />
       <HeroTextWrapper>
         <div>
-          <Heading
-            color="var(--white)"
-            styledAs="6"
-          >
+          <Heading color="var(--white)" styledAs="6">
             Richard Yarwood
           </Heading>
-          <Heading
-            as="h2"
-            styledAs="4"
-            color="var(--jsxBlue)"
-          >
+          <Heading as="h2" styledAs="4" color="var(--reactBlue)">
             Full Stack JavaScript Developer
           </Heading>
         </div>

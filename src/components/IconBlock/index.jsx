@@ -15,13 +15,22 @@ const IconWrapper = styled.div`
 const IconBlock = () => (
   <IconContext.Provider value={{ color: 'var(--white)', size: '20px' }}>
     <IconWrapper>
-      <a href="https://www.linkedin.com/in/richyarwood/" title="Richard Yarwood Full Stack Javascript Developer - LinkedIn">
+      <a
+        href="https://www.linkedin.com/in/richyarwood/"
+        title="Richard Yarwood Full Stack Javascript Developer - LinkedIn"
+      >
         <AiFillLinkedin />
       </a>
-      <a href="https://github.com/richyarwood" title="Richard Yarwood Full Stack Javascript Developer - GitHub">
+      <a
+        href="https://github.com/richyarwood"
+        title="Richard Yarwood Full Stack Javascript Developer - GitHub"
+      >
         <AiFillGithub />
       </a>
-      <a href="mailto:richyarwood@gmail.com" title="Richard Yarwood Full Stack Javascript Developer - Email">
+      <a
+        href="mailto:richyarwood@gmail.com"
+        title="Richard Yarwood Full Stack Javascript Developer - Email"
+      >
         <AiFillMail />
       </a>
     </IconWrapper>

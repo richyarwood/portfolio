@@ -8,6 +8,7 @@ import VerticalNav from '../VerticalNav';
 import SideBarProfile from '../SideBarProfile';
 import IconBlock from '../IconBlock';
 import MobileHeader from '../MobileHeader';
+import Footer from '../Footer';
 
 const sideBarWidth = 150;
 const mobileBarHeight = 60;
@@ -32,7 +33,7 @@ const SidebarStyles = styled.div`
 
   &.menu--active {
     left: 0;
-    box-shadow: 3px 1px 4px -1px rgba(0,0,0,0.7);
+    box-shadow: 3px 1px 4px -1px rgba(0, 0, 0, 0.7);
   }
 
   ${mq.tablet} {
@@ -48,29 +49,26 @@ const MainStyles = styled.div`
   overflow-y: auto;
   width: 100%;
 
-  ${mq.tablet}{
+  ${mq.tablet} {
     padding-top: ${({ noPaddingTop }) => (noPaddingTop && noPaddingTop ? '0' : '4rem')};
     margin-left: calc(${sideBarWidth}px + 10px);
   }
 `;
 
-const Layout = ({
-  children,
-  noPaddingTop,
-}) => {
+const Layout = ({ children, noPaddingTop }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const data = useStaticQuery(graphql`
-  query SiteMetaQuery {
-    site {
-      siteMetadata {
-        menuItems {
-          link
-          name
+    query SiteMetaQuery {
+      site {
+        siteMetadata {
+          menuItems {
+            link
+            name
+          }
+          title
         }
-        title
       }
     }
-  }
   `);
 
   // TODO need to add in keydown functions and tabbing
@@ -84,19 +82,16 @@ const Layout = ({
         height={mobileBarHeight}
       />
       <WrapperStyles>
-        <SidebarStyles
-          className={`${!toggleMenu ? '' : 'menu--active'}`}
-        >
+        <SidebarStyles className={`${!toggleMenu ? '' : 'menu--active'}`}>
           <SideBarProfile />
           <nav>
             <VerticalNav menuItems={data.site.siteMetadata.menuItems} />
           </nav>
           <IconBlock />
         </SidebarStyles>
-        <MainStyles
-          noPaddingTop={noPaddingTop}
-        >
+        <MainStyles noPaddingTop={noPaddingTop}>
           {children}
+          <Footer />
         </MainStyles>
       </WrapperStyles>
     </>

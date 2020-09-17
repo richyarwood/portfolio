@@ -26,9 +26,9 @@ const ExperienceDivider = styled.div`
 
   :after {
     background-color: var(--darkGrey);
-    border: 2px solid var(--jsxBlue);
+    border: 2px solid var(--reactBlue);
     border-radius: 10px;
-    content: "";
+    content: '';
     display: block;
     height: 11px;
     margin-left: -7px;
@@ -44,43 +44,34 @@ const ExperienceRightSide = styled.div`
 `;
 
 const ExperienceBlock = ({
-  title,
-  date,
-  summary,
-  company,
+  title, date, summary, company,
 }) => (
   <ExperienceItemWrapper>
     <ExperienceLeftSide>
-      <Heading
-        as="h2"
-        styledAs="2"
-        color="var(--jsxBlue)"
-      >
+      <Heading as="h2" styledAs="2" color="var(--reactBlue)">
         {date}
       </Heading>
-      <p css={`
-      color: var(--white);
-      font-size: var(--sm);
-      margin-top: var(--xs);
-    `}
+      <p
+        css={`
+          color: var(--white);
+          font-size: var(--sm);
+          margin-top: var(--xs);
+        `}
       >
         {company}
       </p>
     </ExperienceLeftSide>
     <ExperienceDivider />
     <ExperienceRightSide>
-      <Heading
-        as="h2"
-        color="var(--jsxBlue)"
-        styledAs="2"
-      >
+      <Heading as="h2" color="var(--reactBlue)" styledAs="2">
         {title}
       </Heading>
-      <p css={`
-      color: var(--white);
-      font-size: var(--sm);
-      margin-top: var(--xs);
-    `}
+      <p
+        css={`
+          color: var(--white);
+          font-size: var(--sm);
+          margin-top: var(--xs);
+        `}
       >
         {summary}
       </p>

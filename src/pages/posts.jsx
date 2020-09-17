@@ -15,9 +15,7 @@ const Posts = ({ data, location }) => (
         relativeUrl={location.pathname}
         description="Some of my experiences coding and top tips for coding in JavaScript, React, HTML and CSS, plus more."
       />
-      <div
-        className="container"
-      >
+      <div className="container">
         <Heading
           as="h1"
           underlined
@@ -44,28 +42,26 @@ const Posts = ({ data, location }) => (
   </PageContext.Provider>
 );
 
-
 export const query = graphql`
-query PostsPageQuery {
-  allMdx(filter: {fields: {collection: {ne: "experience"}}}) {
-    nodes {
-      frontmatter {
-        slug
-        tags
-        title
-        id
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+  query PostsPageQuery {
+    allMdx(filter: { fields: { collection: { ne: "experience" } } }) {
+      nodes {
+        frontmatter {
+          slug
+          tags
+          title
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
+        excerpt(truncate: true, pruneLength: 150)
       }
-      excerpt(truncate: true, pruneLength: 150)
     }
   }
-}
 `;
 
 export default Posts;

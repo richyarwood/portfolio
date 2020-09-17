@@ -55,20 +55,22 @@ const Experience = ({ data, location }) => (
   </PageContext.Provider>
 );
 
-
 export const query = graphql`
-query ExperienceQuery {
-  allMdx(filter: {fields: {collection: {eq: "experience"}}}, sort: {fields: frontmatter___start, order: DESC}) {
-    nodes {
-      frontmatter {
-        company
-        employment_period
-        experience_summary
-        job_title
+  query ExperienceQuery {
+    allMdx(
+      filter: { fields: { collection: { eq: "experience" } } }
+      sort: { fields: frontmatter___start, order: DESC }
+    ) {
+      nodes {
+        frontmatter {
+          company
+          employment_period
+          experience_summary
+          job_title
+        }
       }
     }
   }
-}
 `;
 
 export default Experience;
