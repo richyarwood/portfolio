@@ -102,11 +102,13 @@ const PostTemplate = ({ data, location }) => {
               items={filterItems(data.posts.edges)}
             />
           )}
-          <SideBarWidget
-            heading="Projects"
-            items={filterItems(data.projects.edges)}
-          />
-
+          {data.projects.edges.length
+          && (
+            <SideBarWidget
+              heading="Projects"
+              items={filterItems(data.projects.edges)}
+            />
+          )}
         </RightSideWrapper>
       </PageWrapper>
     </Layout>
