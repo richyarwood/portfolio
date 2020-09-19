@@ -26,15 +26,16 @@ const Projects = ({ data, location }) => (
           Work and private projects
         </Heading>
         <CardGrid>
-          {data.allMdx.nodes.map((post) => (
+          {data.allMdx.nodes.map(({ frontmatter: post, excerpt }) => (
             <Card
-              key={post.frontmatter.id}
-              title={post.frontmatter.title}
-              tags={post.frontmatter.tags}
-              image={post.frontmatter.image.childImageSharp.fluid}
-              description={post.excerpt}
-              date={post.frontmatter.date}
-              cardUrl={`/posts/${post.frontmatter.slug}`}
+              key={post.id}
+              title={post.title}
+              tags={post.tags}
+              image={post.image.childImageSharp.fluid}
+              description={excerpt}
+              date={post.date}
+              cardUrl={`/posts/${post.slug}`}
+              type={post.type}
             />
           ))}
         </CardGrid>
@@ -45,9 +46,12 @@ const Projects = ({ data, location }) => (
 
 export const query = graphql`
   query ProjectsPageQuery {
-    allMdx(filter: { fields: { collection: { ne: "experience" } } }) {
+    allMdx(filter: { fields: { collection: { ne: "experience" } } }
+    sort: { order: DESC, fields: frontmatter___date }
+    ) {
       nodes {
         frontmatter {
+          type
           slug
           tags
           title

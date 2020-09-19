@@ -34,6 +34,7 @@ const Posts = ({ data, location }) => (
               image={post.frontmatter.image.childImageSharp.fluid}
               description={post.excerpt}
               cardUrl={`/posts/${post.frontmatter.slug}`}
+              type={post.type}
             />
           ))}
         </CardGrid>
@@ -47,6 +48,7 @@ export const query = graphql`
     allMdx(filter: { fields: { collection: { ne: "experience" } } }) {
       nodes {
         frontmatter {
+          type
           slug
           tags
           title

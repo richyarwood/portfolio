@@ -37,6 +37,7 @@ const IndexPage = ({ data, location }) => (
                 description={post.frontmatter?.excerpt}
                 cardUrl={`/posts/${post.frontmatter?.slug}`}
                 date={post.frontmatter?.date}
+                type={post.frontmatter?.type}
               />
             ))}
           </CardGrid>
@@ -54,6 +55,7 @@ export const query = graphql`
     ) {
       nodes {
         frontmatter {
+          type
           slug
           tags
           title
