@@ -38,21 +38,21 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/posts`,
+        path: `${__dirname}/src/content/posts`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'projects',
-        path: `${__dirname}/src/projects`,
+        path: `${__dirname}/src/content/projects`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'experience',
-        path: `${__dirname}/src/experience`,
+        path: `${__dirname}/src/content/experience`,
       },
     },
     'gatsby-transformer-sharp',
