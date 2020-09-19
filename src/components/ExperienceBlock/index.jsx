@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Heading from '../Heading';
 
 const ExperienceItemWrapper = styled.div`
@@ -56,6 +57,7 @@ const ExperienceBlock = ({
           color: var(--white);
           font-size: var(--sm);
           margin-top: var(--xs);
+          font-weight: var(--regularFont);
         `}
       >
         {company}
@@ -73,7 +75,7 @@ const ExperienceBlock = ({
           margin-top: var(--xs);
         `}
       >
-        {summary}
+        <MDXRenderer>{summary}</MDXRenderer>
       </p>
     </ExperienceRightSide>
   </ExperienceItemWrapper>
