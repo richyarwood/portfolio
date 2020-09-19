@@ -37,13 +37,13 @@ const Experience = ({ data, location }) => (
             Work Experience and Programming Skills
           </Heading>
 
-          {data.allMdx.nodes.map(({ frontmatter: experience }) => (
+          {data.allMdx.nodes.map((item) => (
             <ExperienceBlock
-              key={experience.employment_period}
-              company={experience.company}
-              date={experience.employment_period}
-              title={experience.job_title}
-              summary={experience.experience_summary}
+              key={item.frontmatter.employment_period}
+              company={item.frontmatter.company}
+              date={item.frontmatter.employment_period}
+              title={item.frontmatter.job_title}
+              summary={item.body}
             />
           ))}
         </div>
@@ -65,9 +65,9 @@ export const query = graphql`
         frontmatter {
           company
           employment_period
-          experience_summary
           job_title
         }
+        body
       }
     }
   }
