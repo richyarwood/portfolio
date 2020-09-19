@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     --darkGrey: #1b1b1b;
     --htmlGreen: #15a710;
     --reactBlue: #3eacf7;
-    --jsYellow: #f7df1e;
+    --jsYellow: #ddc508;
     --lightGrey: #2f2f2f;
     --white: #ffffff;
     --pythonBlue: #356d9c;
