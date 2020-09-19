@@ -6,6 +6,7 @@ import { mq } from '../../utils/presets';
 import Tag from '../Tag';
 import Heading from '../Heading';
 import Date from '../Date';
+import OverlayIcon from '../OverlayIcon';
 
 const CardWrapper = styled.div`
   ${mq.tablet} {
@@ -27,12 +28,15 @@ const CardBody = styled.div`
   margin-bottom: var(--lg);
   min-height: 450px;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
   width: auto;
 
   ${mq.tablet} {
     margin: 0 var(--sm) var(--xl) var(--sm);
   }
+`;
+
+const CardImageWrapper = styled.div`
+  position: relative;
 `;
 
 const CardImage = styled(Img)`
@@ -66,17 +70,32 @@ const CardTags = styled.div`
 `;
 
 const Card = ({
-  description, image, tags, title, cardUrl, date,
+  description,
+  image,
+  tags,
+  title,
+  cardUrl,
+  date,
+  type,
 }) => (
   <CardWrapper>
     <Link to={cardUrl}>
       <CardBody>
-        <CardImage
-          fluid={image}
-          alt={title}
-          objectFit="cover"
-          objectPosition="50% 50%"
-        />
+        <CardImageWrapper>
+          <CardImage
+            fluid={image}
+            alt={title}
+            objectFit="cover"
+            objectPosition="50% 50%"
+          />
+          <OverlayIcon
+            bottom={5}
+            right={5}
+            absolute
+            type={type}
+            size="30px"
+          />
+        </CardImageWrapper>
         <CardContent>
           <Date date={date} />
           <Heading

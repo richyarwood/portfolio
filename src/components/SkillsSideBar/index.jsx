@@ -63,7 +63,7 @@ const SkillsSideBar = () => (
       </Heading>
       <SkillsHeading>Technologies and frameworks</SkillsHeading>
       <SkillsParagraph>
-        Python | Django | MongoDB | PostgreSQL | Flask
+        Python | Django | MongoDB | PostgreSQL | Flask | PHP
       </SkillsParagraph>
       <SkillsHeading>Testing</SkillsHeading>
       <SkillsParagraph>Cypress | WebDriverIO</SkillsParagraph>

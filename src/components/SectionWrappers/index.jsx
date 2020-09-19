@@ -7,7 +7,8 @@ const PageWrapperStyles = styled.div`
   flex-direction: row;
 
   > div:first-child {
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
   }
 `;
 
@@ -17,7 +18,6 @@ const RightSideWrapperStyles = styled.div`
   ${mq.desktop} {
     display: block;
     min-width: 250px;
-    height: 100vh;
     margin: 0 var(--md);
     max-width: 300px;
     width: 100%;
