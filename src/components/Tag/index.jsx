@@ -37,7 +37,7 @@ const TagStyles = styled.div`
   min-width: 40px;
   text-align: center;
   background-color: ${({ choice }) => choice && choice.color};
-  color: var(--black);
+  color: var(--white);
   border-radius: 3px;
   padding: 3px 5px;
   margin-bottom: 5px;
