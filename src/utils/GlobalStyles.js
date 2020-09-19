@@ -58,11 +58,11 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   h4 {

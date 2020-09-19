@@ -7,6 +7,7 @@ const CodeStyles = styled.div`
   -webkit-overflow-scrolling: touch;
   background-color: rgb(30, 30, 30);
   position: relative;
+  display: grid;
 
   & pre[class*='language-'] {
     overflow: auto;

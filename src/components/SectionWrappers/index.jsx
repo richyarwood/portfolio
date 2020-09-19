@@ -8,7 +8,7 @@ const PageWrapperStyles = styled.div`
 
   > div:first-child {
     max-width: 800px;
-    width: 100%;
+    width: auto;
   }
 `;
 

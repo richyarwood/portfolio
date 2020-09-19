@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const TimeStyles = styled.time`
   color: var(--white);
-  font-size: ${({ size }) => (size ? `${size}rem` : '1.2rem')};
+  font-size: ${({ size }) => (size ? `${size}rem` : '1.4rem')};
   margin-bottom: var(--xxs);
 `;
 

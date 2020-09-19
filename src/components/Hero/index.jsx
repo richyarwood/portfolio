@@ -58,7 +58,7 @@ const Hero = () => {
       />
       <HeroTextWrapper>
         <div>
-          <Heading color="var(--white)" styledAs="6">
+          <Heading color="var(--white)" as="h1" styledAs="6">
             Richard Yarwood
           </Heading>
           <Heading as="h2" styledAs="4" color="var(--reactBlue)">

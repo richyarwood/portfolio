@@ -13,19 +13,21 @@ import Footer from '../Footer';
 const sideBarWidth = 150;
 const mobileBarHeight = 60;
 
-const WrapperStyles = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  min-height: 100vh;
   position: relative;
 `;
 
-const SidebarStyles = styled.div`
+const SideBar = styled.div`
   background-color: var(--darkGrey);
-  height: 100vh;
+  height: 100%;
   left: -${sideBarWidth}px;
-  position: absolute;
+  position: fixed;
   top: ${mobileBarHeight}px;
   transition: all 0.2s ease-in-out;
   width: ${sideBarWidth}px;
@@ -44,7 +46,7 @@ const SidebarStyles = styled.div`
 
 const MainStyles = styled.div`
   background-color: var(--darkGrey);
-  height: 100vh;
+  height: 100%;
   padding-top: calc(${mobileBarHeight}px + 10px);
   overflow-y: auto;
   width: 100%;
@@ -81,19 +83,19 @@ const Layout = ({ children, noPaddingTop }) => {
         onClick={() => setToggleMenu(!toggleMenu)}
         height={mobileBarHeight}
       />
-      <WrapperStyles>
-        <SidebarStyles className={`${!toggleMenu ? '' : 'menu--active'}`}>
+      <Wrapper>
+        <SideBar className={`${!toggleMenu ? '' : 'menu--active'}`}>
           <SideBarProfile />
           <nav>
             <VerticalNav menuItems={data.site.siteMetadata.menuItems} />
           </nav>
           <IconBlock />
-        </SidebarStyles>
+        </SideBar>
         <MainStyles noPaddingTop={noPaddingTop}>
           {children}
           <Footer />
         </MainStyles>
-      </WrapperStyles>
+      </Wrapper>
     </>
   );
 };

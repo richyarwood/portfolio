@@ -14,6 +14,7 @@ const IndexPage = ({ data, location }) => (
       <SEO
         title="Full Stack JavaScript Developer"
         relativeUrl={location.pathname}
+        description="I'm a front end developer based in London, working on large scale React tech stacks. Have a look at some of my work and read some top tips."
       />
       <Hero />
       <div className="container">
@@ -32,6 +33,7 @@ const IndexPage = ({ data, location }) => (
               <Card
                 key={post.id}
                 title={post.frontmatter?.title}
+                alt={post.frontmatter?.title}
                 tags={post.frontmatter?.tags}
                 image={post.frontmatter?.image?.childImageSharp?.fluid}
                 description={post.frontmatter?.excerpt}

@@ -60,16 +60,21 @@ const PostTemplate = ({ data, location }) => {
 
   const filterItems = (items) => items
     .filter((item) => item.node.frontmatter.slug !== pagePath)
-    .map((item) => item.node.frontmatter);
+    .map((item) => ({ id: item.node.id, ...item.node.frontmatter }));
 
   return (
     <Layout>
-      <SEO title={title} relativeUrl={location.pathname} />
+      <SEO
+        title={title}
+        relativeUrl={location.pathname}
+        description={data.mdx.excerpt}
+      />
       <PageWrapper>
         <div>
           {data.mdx.frontmatter.image && (
             <PostImage
               fluid={image.childImageSharp.fluid}
+              alt={title}
             />
           )}
           <PostBody>
@@ -119,6 +124,7 @@ export const query = graphql`
   query MyQuery($id: String!) {
     mdx(id: { eq: $id }) {
       body
+      excerpt
       frontmatter {
         type
         title
@@ -141,6 +147,7 @@ export const query = graphql`
     ) {
       edges {
         node {
+          id
           frontmatter {
             slug
             title
@@ -161,6 +168,7 @@ export const query = graphql`
             title
             tags
           }
+          id
         }
       }
     }
