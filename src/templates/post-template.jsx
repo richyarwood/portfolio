@@ -11,10 +11,11 @@ import Heading from '../components/Heading';
 import Box from '../components/Box';
 import SideBarWidget from '../components/SideBarWidget';
 import Tag from '../components/Tag';
+import OverlayIcon from '../components/OverlayIcon';
 
 const PostBody = styled.div`
-  font-size: var(--md);
   color: var(--white);
+  font-size: var(--md);
   font-weight: var(--lightFont);
   margin: var(--sm);
   transform: translateY(-100px);
@@ -28,16 +29,23 @@ const PostBody = styled.div`
 `;
 
 const PostImage = styled(Img)`
-  height: 350px;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
+  height: 350px;
+`;
+
+const PostTagsWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: var(--lg);
 `;
 
 const PostTags = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-bottom: var(--lg);
 
   & > div:not(:last-child) {
     margin-right: var(--xxs);
@@ -45,7 +53,9 @@ const PostTags = styled.div`
 `;
 
 const PostTemplate = ({ data, location }) => {
-  const { title, tags } = data.mdx.frontmatter;
+  const {
+    title, tags, type, image,
+  } = data.mdx.frontmatter;
   const pagePath = location.pathname.replace(/^.*\//, '');
 
   const filterItems = (items) => items
@@ -54,23 +64,26 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout>
-      <SEO title={data.mdx.frontmatter.title} relativeUrl={location.pathname} />
+      <SEO title={title} relativeUrl={location.pathname} />
       <PageWrapper>
         <div>
           {data.mdx.frontmatter.image && (
             <PostImage
-              fluid={data.mdx.frontmatter.image.childImageSharp.fluid}
+              fluid={image.childImageSharp.fluid}
             />
           )}
           <PostBody>
             <Box dark>
-              {tags && (
-                <PostTags>
-                  {tags.map((tag) => (
-                    <Tag key={tag} choice={tag} />
-                  ))}
-                </PostTags>
-              )}
+              <PostTagsWrapper>
+                {tags && (
+                  <PostTags>
+                    {tags.map((tag) => (
+                      <Tag key={tag} choice={tag} />
+                    ))}
+                  </PostTags>
+                )}
+                <OverlayIcon type={type} />
+              </PostTagsWrapper>
               <Heading
                 color="var(--white)"
                 moreStyles={{ 'padding-bottom': '20px' }}
@@ -82,14 +95,18 @@ const PostTemplate = ({ data, location }) => {
           </PostBody>
         </div>
         <RightSideWrapper>
-          <SideBarWidget
-            heading="More posts"
-            items={filterItems(data.posts.edges)}
-          />
+          {data.posts.edges.length
+          && (
+            <SideBarWidget
+              heading="More posts"
+              items={filterItems(data.posts.edges)}
+            />
+          )}
           <SideBarWidget
             heading="Projects"
             items={filterItems(data.projects.edges)}
           />
+
         </RightSideWrapper>
       </PageWrapper>
     </Layout>
@@ -101,6 +118,7 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       body
       frontmatter {
+        type
         title
         tags
         slug
