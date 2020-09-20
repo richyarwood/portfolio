@@ -16,8 +16,13 @@ const BoxStyles = styled.div`
   }
 `;
 
-const Box = ({ children, dark }) => (
-  <BoxStyles dark={dark}>{children}</BoxStyles>
+const Box = ({
+  children,
+  dark,
+}) => (
+  <BoxStyles dark={dark}>
+    {children}
+  </BoxStyles>
 );
 
 export default Box;

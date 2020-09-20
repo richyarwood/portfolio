@@ -25,7 +25,11 @@ const SkillsHeading = ({ children }) => (
 const SkillsSideBar = () => (
   <>
     <Box>
-      <Heading as="h3" underlined color="var(--white)">
+      <Heading
+        as="h3"
+        color="var(--white)"
+        underline
+      >
         Core skills
       </Heading>
       <Heading
@@ -58,15 +62,24 @@ const SkillsSideBar = () => (
       </SkillsParagraph>
     </Box>
     <Box>
-      <Heading as="h3" underlined>
+      <Heading
+        as="h3"
+        underlined
+      >
         Working knowledge
       </Heading>
-      <SkillsHeading>Technologies and frameworks</SkillsHeading>
+      <SkillsHeading>
+        Technologies and frameworks
+      </SkillsHeading>
       <SkillsParagraph>
         Python | Django | MongoDB | PostgreSQL | Flask | PHP
       </SkillsParagraph>
-      <SkillsHeading>Testing</SkillsHeading>
-      <SkillsParagraph>Cypress | WebDriverIO</SkillsParagraph>
+      <SkillsHeading>
+        Testing
+      </SkillsHeading>
+      <SkillsParagraph>
+        Cypress | WebDriverIO
+      </SkillsParagraph>
     </Box>
   </>
 );

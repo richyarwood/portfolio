@@ -6,14 +6,14 @@ import theme from 'prism-react-renderer/themes/vsDark';
 const CodeStyles = styled.div`
   -webkit-overflow-scrolling: touch;
   background-color: rgb(30, 30, 30);
-  position: relative;
   display: grid;
+  position: relative;
 
   & pre[class*='language-'] {
-    overflow: auto;
-    padding: 3rem;
     border-radius: 5px;
     font-size: var(--sm);
+    overflow: auto;
+    padding: 3rem;
     white-space: pre;
   }
 
@@ -58,7 +58,11 @@ const CodeBlock = ({ codeString, language }) => (
     theme={theme}
   >
     {({
-      className, style, tokens, getLineProps, getTokenProps,
+      className,
+      style,
+      tokens,
+      getLineProps,
+      getTokenProps,
     }) => (
       <CodeStyles className="gatsby-highlight" data-language={language}>
         <pre className={className} style={style}>

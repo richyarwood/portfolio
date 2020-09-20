@@ -1,16 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TimeStyles = styled.time`
+const DateStyles = styled.time`
   color: var(--white);
   font-size: ${({ size }) => (size ? `${size}rem` : '1.4rem')};
   margin-bottom: var(--xxs);
 `;
 
-const Date = ({ date, size }) => (
-  <TimeStyles dateTime={date} size={size}>
+const Date = ({
+  date,
+  size,
+}) => (
+  <DateStyles
+    dateTime={date}
+    size={size}
+  >
     {date}
-  </TimeStyles>
+  </DateStyles>
 );
 
 export default Date;

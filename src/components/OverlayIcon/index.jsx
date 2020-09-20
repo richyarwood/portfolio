@@ -21,8 +21,14 @@ const OverlayIconStyles = styled.div`
   justify-content: center;
   min-width: ${({ size }) => size || '40px'};
   position: relative;
+  transition: transform ease-in-out 0.5s;
   width: ${({ size }) => size || '40px'};
   z-index: 1;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform ease-in-out 0.5s;
+  }
 
   &:hover ~ div #overlay-label { /* Label */
     max-width: 150px;

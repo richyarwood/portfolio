@@ -5,12 +5,12 @@ import PageContext from '../../context/PageContext';
 
 const verticalLine = css`
   content: '';
-  height: 100%;
-  top: 0;
-  right: 0;
   background-color: var(--reactBlue);
-  width: 5px;
+  height: 100%;
   position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
 `;
 
 const MenuItemStyles = styled(Link)`
@@ -54,15 +54,15 @@ const MenuItem = ({ text, url }) => {
 
   return (
     <MenuItemStyles
+      activeStyle={{ color: 'red' }}
       className={
         pagePath.replace(/(\/$)/, '') === url.replace(/(\/$)/, '')
           ? 'active'
           : ''
       }
+      getProps={isActive}
       to={url}
       role="menuitem"
-      getProps={isActive}
-      activeStyle={{ color: 'red' }}
     >
       {text}
     </MenuItemStyles>

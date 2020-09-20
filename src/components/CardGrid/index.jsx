@@ -14,7 +14,9 @@ const CardGridWrapper = styled.div`
 `;
 
 const CardGrid = ({ children }) => (
-  <CardGridWrapper>{children}</CardGridWrapper>
+  <CardGridWrapper>
+    {children}
+  </CardGridWrapper>
 );
 
 export default CardGrid;

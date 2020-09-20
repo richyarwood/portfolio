@@ -45,11 +45,18 @@ const ExperienceRightSide = styled.div`
 `;
 
 const ExperienceBlock = ({
-  title, date, summary, company,
+  title,
+  date,
+  summary,
+  company,
 }) => (
   <ExperienceItemWrapper>
     <ExperienceLeftSide>
-      <Heading as="h2" styledAs="2" color="var(--reactBlue)">
+      <Heading
+        as="h2"
+        styledAs="2"
+        color="var(--reactBlue)"
+      >
         {date}
       </Heading>
       <p
@@ -65,7 +72,11 @@ const ExperienceBlock = ({
     </ExperienceLeftSide>
     <ExperienceDivider />
     <ExperienceRightSide>
-      <Heading as="h2" color="var(--reactBlue)" styledAs="2">
+      <Heading
+        as="h2"
+        styledAs="2"
+        color="var(--reactBlue)"
+      >
         {title}
       </Heading>
       <p
@@ -75,7 +86,9 @@ const ExperienceBlock = ({
           margin-top: var(--xs);
         `}
       >
-        <MDXRenderer>{summary}</MDXRenderer>
+        <MDXRenderer>
+          {summary}
+        </MDXRenderer>
       </p>
     </ExperienceRightSide>
   </ExperienceItemWrapper>

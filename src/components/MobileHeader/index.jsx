@@ -7,17 +7,17 @@ import { IconContext } from 'react-icons';
 import { mq } from '../../utils/presets';
 
 const MobileHeaderStyles = styled.div`
-  height: ${({ height }) => height && `${height}px`};
+  align-items: center;
   background-color: var(--darkGrey);
   box-shadow: 3px 1px 4px -1px rgba(0, 0, 0, 0.7);
-  padding: 0.5rem 1.5rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: ${({ height }) => height && `${height}px`};
   justify-content: space-between;
+  left: 0;
+  padding: 0.5rem 1.5rem;
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: 300;
 
@@ -48,8 +48,8 @@ const MobileHeader = ({ onClick, height }) => {
       <MobileHeaderStyles height={height}>
         <div
           css={`
-            display: flex;
             align-items: center;
+            display: flex;
           `}
         >
           <RoundImage

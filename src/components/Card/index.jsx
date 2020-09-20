@@ -83,17 +83,17 @@ const Card = ({
       <CardBody>
         <CardImageWrapper>
           <CardImage
-            fluid={image}
             alt={title}
+            fluid={image}
             objectFit="cover"
             objectPosition="50% 50%"
           />
           <OverlayIcon
+            absolute
             bottom={5}
             right={5}
-            absolute
-            type={type}
             size="30px"
+            type={type}
           />
         </CardImageWrapper>
         <CardContent>
@@ -105,7 +105,9 @@ const Card = ({
           >
             {title}
           </Heading>
-          <CardDescription>{description}</CardDescription>
+          <CardDescription>
+            {description}
+          </CardDescription>
           <CardTags>
             {tags && tags.map((tag) => <Tag key={tag} choice={tag} />)}
           </CardTags>

@@ -36,8 +36,6 @@ const Footer = () => (
       <a
         href="https://github.com/richyarwood/portfolio"
         title="Richard Yarwood Full Stack Javascript Developer - GitHub"
-        rel="noopener noreferrer"
-        target="_blank"
       >
         <FooterText>
           <AiFillGithub />

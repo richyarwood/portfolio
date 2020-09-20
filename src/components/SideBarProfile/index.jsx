@@ -18,8 +18,8 @@ const SideBarProfileStyles = styled.div`
 
 const RoundImage = styled(Img)`
   border-radius: 50%;
-  width: 80px;
   margin: 0 var(--sm);
+  width: 80px;
 `;
 
 const SideBarProfile = () => {
@@ -38,15 +38,15 @@ const SideBarProfile = () => {
   return (
     <SideBarProfileStyles>
       <RoundImage
-        fluid={data.file.childImageSharp.fluid}
         alt="Richard Yarwood - Full Stack Javacript Developer"
+        fluid={data.file.childImageSharp.fluid}
       />
       <p
         css={`
-          text-align: center;
           color: var(--white);
-          padding-top: var(--sm);
           font-size: var(--md);
+          padding-top: var(--sm);
+          text-align: center;
         `}
       >
         Richard Yarwood

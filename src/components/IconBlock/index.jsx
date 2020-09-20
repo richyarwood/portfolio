@@ -4,8 +4,8 @@ import { AiFillLinkedin, AiFillMail, AiFillGithub } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 const IconWrapper = styled.div`
-  display: flex;
   color: var(--white);
+  display: flex;
   flex-direction: row;
   height: 40px;
   justify-content: space-evenly;

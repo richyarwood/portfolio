@@ -33,16 +33,16 @@ const tagChoice = (choice) => {
 };
 
 const TagStyles = styled.div`
-  height: 2rem;
-  min-width: 40px;
-  text-align: center;
   background-color: ${({ choice }) => choice && choice.color};
-  color: var(--white);
   border-radius: 3px;
-  padding: 3px 5px;
-  margin-bottom: 5px;
+  color: var(--white);
   font-size: 1rem;
+  height: 2rem;
   font-weight: 500;
+  margin-bottom: 5px;
+  min-width: 40px;
+  padding: 3px 5px;
+  text-align: center;
   text-transform: uppercase;
 `;
 

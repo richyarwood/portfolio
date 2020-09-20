@@ -27,17 +27,17 @@ const Heading = ({
   color,
   marginLeft,
   moreStyles,
-  underlined,
   styledAs,
+  underlined,
 }) => (
   <HeadingStyles
     as={as}
-    color={color}
     center={center}
+    color={color}
     marginLeft={marginLeft}
     moreStyles={moreStyles}
-    underlined={underlined}
     styledAs={styledAs}
+    underlined={underlined}
   >
     {children}
   </HeadingStyles>

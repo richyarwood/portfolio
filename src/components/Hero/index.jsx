@@ -7,11 +7,11 @@ import { mq } from '../../utils/presets';
 import Heading from '../Heading';
 
 const HeroStyles = styled.div`
+  height: 400px;
   margin-bottom: var(--lg);
   min-height: auto;
-  height: 400px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 
   ${mq.desktop} {
     margin-bottom: var(--xxl);
@@ -19,16 +19,16 @@ const HeroStyles = styled.div`
 `;
 
 const HeroImage = styled(Img)`
-  position: absolute;
   left: 0;
+  position: absolute;
   top: 0;
   width: 100%;
 `;
 
 const HeroTextWrapper = styled.div`
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   height: 100%;
   left: 0;
   padding: 0 5%;
@@ -58,10 +58,18 @@ const Hero = () => {
       />
       <HeroTextWrapper>
         <div>
-          <Heading color="var(--white)" as="h1" styledAs="6">
+          <Heading
+            as="h1"
+            color="var(--white)"
+            styledAs="6"
+          >
             Richard Yarwood
           </Heading>
-          <Heading as="h2" styledAs="4" color="var(--reactBlue)">
+          <Heading
+            as="h2"
+            color="var(--reactBlue)"
+            styledAs="4"
+          >
             Full Stack JavaScript Developer
           </Heading>
         </div>

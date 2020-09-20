@@ -7,15 +7,15 @@ import { mq } from '../../utils/presets';
 const size = 20;
 
 const HamburgerStyles = styled.button`
+  background-color: var(--darkGrey);
   border: none;
-  box-shadow: 3px 1px 4px -1px rgba(0, 0, 0, 0.7);
-  position: absolute;
-  padding: var(--xs);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: var(--darkGrey);
-  top: ${({ top }) => top && top};
+  box-shadow: 3px 1px 4px -1px rgba(0, 0, 0, 0.7);
   left: ${({ left }) => left && left};
+  padding: var(--xs);
+  position: absolute;
+  top: ${({ top }) => top && top};
   z-index: 300;
 
   ${mq.tablet} {
@@ -25,7 +25,11 @@ const HamburgerStyles = styled.button`
 
 const Hamburger = ({ top, left, onClick }) => (
   <IconContext.Provider value={{ color: 'var(--white)', size: `${size}px` }}>
-    <HamburgerStyles top={top} left={left} onClick={onClick}>
+    <HamburgerStyles
+      top={top}
+      left={left}
+      onClick={onClick}
+    >
       <AiOutlineMenu />
     </HamburgerStyles>
   </IconContext.Provider>

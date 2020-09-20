@@ -25,9 +25,13 @@ const RightSideWrapperStyles = styled.div`
 `;
 
 export const PageWrapper = ({ children }) => (
-  <PageWrapperStyles>{children}</PageWrapperStyles>
+  <PageWrapperStyles>
+    {children}
+  </PageWrapperStyles>
 );
 
 export const RightSideWrapper = ({ children }) => (
-  <RightSideWrapperStyles>{children}</RightSideWrapperStyles>
+  <RightSideWrapperStyles>
+    {children}
+  </RightSideWrapperStyles>
 );
