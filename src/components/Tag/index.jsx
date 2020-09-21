@@ -27,6 +27,18 @@ const tagChoice = (choice) => {
     return {
       color: 'var(--pythonBlue)',
     };
+  case 'sass':
+    return {
+      color: 'var(--sassPink)',
+    };
+  case 'jest':
+    return {
+      color: 'var(--jestGreen)',
+    };
+  case 'node':
+    return {
+      color: 'var(--nodeGreen)',
+    };
   default:
     return {};
   }
