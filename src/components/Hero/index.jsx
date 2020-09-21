@@ -7,7 +7,7 @@ import { mq } from '../../utils/presets';
 import Heading from '../Heading';
 
 const HeroStyles = styled.div`
-  height: 400px;
+  height: 350px;
   margin-bottom: var(--lg);
   min-height: auto;
   overflow: hidden;

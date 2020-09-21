@@ -13,6 +13,7 @@ const FooterStyles = styled.footer`
   align-items: center;
   border-top: 1px solid var(--lightGrey);
   margin: var(--md);
+  margin-top: auto;
 `;
 
 const FooterText = styled.p`

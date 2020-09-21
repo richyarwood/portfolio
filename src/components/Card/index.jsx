@@ -22,7 +22,7 @@ const CardWrapper = styled.div`
 
 const CardBody = styled.div`
   background-color: var(--lightGrey);
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   margin-bottom: var(--lg);

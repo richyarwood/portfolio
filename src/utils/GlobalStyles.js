@@ -16,6 +16,9 @@ const GlobalStyles = createGlobalStyle`
     --white: #ffffff;
     --pythonBlue: #356d9c;
     --postgresqlBlue: #2e5e8e;
+    --sassPink: #d064e8;
+    --jestGreen: #47cc50;
+    --nodeGreen: #206124;
   }
   /* Fonts */
   :root {
@@ -96,8 +99,8 @@ const GlobalStyles = createGlobalStyle`
       padding-right: var(--md);
 
     ${mq.tablet} {
-      padding-left: var(--xl);
-      padding-right: var(--xl);
+      padding-left: var(--md);
+      padding-right: var(--md);
     }
   }
 

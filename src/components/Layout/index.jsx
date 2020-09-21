@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   min-height: 100vh;
   position: relative;
@@ -39,7 +39,7 @@ const SideBar = styled.div`
   }
 
   ${mq.tablet} {
-    left: 0;
+    left: auto;
     top: 0;
   }
 `;
@@ -50,6 +50,9 @@ const MainStyles = styled.div`
   padding-top: calc(${mobileBarHeight}px + 10px);
   overflow-y: auto;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   ${mq.tablet} {
     padding-top: ${({ noPaddingTop }) => (noPaddingTop && noPaddingTop ? '0' : '4rem')};
