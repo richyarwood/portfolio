@@ -1,7 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BsCodeSlash, BsCardText } from 'react-icons/bs';
+import {
+  BsCodeSlash,
+  BsCardText,
+  BsLightning,
+} from 'react-icons/bs';
 import { IconContext } from 'react-icons';
+
+const getIcon = (type) => {
+  switch (type) {
+  case 'project':
+    return <BsCodeSlash />;
+  case 'post':
+    return <BsCardText />;
+  case 'quick tip':
+    return <BsLightning />;
+  default:
+    return <BsCodeSlash />;
+  }
+};
 
 const OverlayIconWrapperStyles = styled.div`
   bottom: ${({ bottom }) => (bottom ? `${bottom}%` : '0px')};
@@ -21,30 +38,42 @@ const OverlayIconStyles = styled.div`
   justify-content: center;
   min-width: ${({ size }) => size || '40px'};
   position: relative;
-  transition: transform ease-in-out 0.5s;
+  transition: transform ease-in-out 0.2s;
   width: ${({ size }) => size || '40px'};
   z-index: 1;
 
-  &:hover {
+  &:hover { /* Icon */
     transform: scale(1.1);
     transition: transform ease-in-out 0.5s;
   }
 
-  &:hover ~ div #overlay-label { /* Label */
-    max-width: 150px;
+  &:hover + div { /* OverlayIconLabelWrapper */
+    border: 1px solid var(--white);
+    transition: all ease-in-out 0.5s;
+    width: 130px;
+  }
+
+  &:hover ~ div #overlay-label { /* Label text */
     opacity: 1;
     transition: all ease-in-out 0.5s;
+    width: 130px;
   }
 
   &:hover ~ div #overlay-label div { /* Label text */
+    flex-grow: 1;
     opacity: 1;
-    transition: opacity ease-in-out 1s;
+    transition: all ease-in-out 0.5s;
   }
 `;
 
 const OverlayIconLabelWrapper = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
+  border: 0px;
+  border-radius: 25px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  transition: all ease-in-out 0.2s;
+  width: 0px;
 `;
 
 const OverlayIconLabelStyles = styled.div`
@@ -58,30 +87,15 @@ const OverlayIconLabelStyles = styled.div`
   font-weight: var(--regularFont);
   height: ${({ size }) => (size || '40px')};
   justify-content: center;
-  max-width: 0px;
-  padding-right: 45px;
   padding-left: 10px;
-  position: absolute;
-  right: 0;
   text-transform: uppercase;
-  top: 0;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.2s;
+  width: 0px;
 
   & div {
     opacity: 0;
   }
 `;
-
-const getIcon = (type) => {
-  switch (type) {
-  case 'project':
-    return <BsCodeSlash />;
-  case 'post':
-    return <BsCardText />;
-  default:
-    return <BsCodeSlash />;
-  }
-};
 
 const OverlayIcon = ({
   absolute,
