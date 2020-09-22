@@ -46,7 +46,7 @@ const Projects = ({ data, location }) => (
 
 export const query = graphql`
   query ProjectsPageQuery {
-    allMdx(filter: { fields: { collection: { ne: "experience" } } }
+    allMdx(filter: { fields: { collection: { eq: "projects" } } }
     sort: { order: DESC, fields: frontmatter___date }
     ) {
       nodes {

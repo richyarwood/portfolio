@@ -4,7 +4,6 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/vsDark';
 
 const CodeStyles = styled.div`
-  -webkit-overflow-scrolling: touch;
   background-color: rgb(30, 30, 30);
   display: grid;
   position: relative;
@@ -64,17 +63,29 @@ const CodeBlock = ({ codeString, language }) => (
       getLineProps,
       getTokenProps,
     }) => (
-      <CodeStyles className="gatsby-highlight" data-language={language}>
-        <pre className={className} style={style}>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      </CodeStyles>
+      <>
+        <p
+          css={`
+          color: #919191;
+          font-size: var(--sm);
+          margin-bottom: 0;
+          font-weight: var(--regularFont);
+        `}
+        >
+          Horizontal scroll
+        </p>
+        <CodeStyles className="gatsby-highlight" data-language={language}>
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </CodeStyles>
+      </>
     )}
   </Highlight>
 );

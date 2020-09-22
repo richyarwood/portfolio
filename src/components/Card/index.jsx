@@ -48,7 +48,7 @@ const CardContent = styled.div`
   padding: var(--md);
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1;
 `;
 
 const CardDescription = styled.p`
