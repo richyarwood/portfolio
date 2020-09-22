@@ -39,6 +39,10 @@ const tagChoice = (choice) => {
     return {
       color: 'var(--nodeGreen)',
     };
+  case 'mongodb':
+    return {
+      color: 'var(--mongoGreen)',
+    };
   default:
     return {};
   }

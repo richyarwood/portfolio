@@ -34,12 +34,12 @@ const OverlayIconStyles = styled.div`
   border-radius: 50%;
   box-shadow: 0px 1px 23px 0px rgba(0,0,0,0.75);
   display: flex;
-  height: ${({ size }) => size || '40px'};
+  height: ${({ size }) => size || '30px'};
   justify-content: center;
-  min-width: ${({ size }) => size || '40px'};
+  min-width: ${({ size }) => size || '30px'};
   position: relative;
   transition: transform ease-in-out 0.2s;
-  width: ${({ size }) => size || '40px'};
+  width: ${({ size }) => size || '30px'};
   z-index: 1;
 
   &:hover { /* Icon */
@@ -50,13 +50,13 @@ const OverlayIconStyles = styled.div`
   &:hover + div { /* OverlayIconLabelWrapper */
     border: 1px solid var(--white);
     transition: all ease-in-out 0.5s;
-    width: 130px;
+    width: 110px;
   }
 
   &:hover ~ div #overlay-label { /* Label text */
     opacity: 1;
     transition: all ease-in-out 0.5s;
-    width: 130px;
+    width: 110px;
   }
 
   &:hover ~ div #overlay-label div { /* Label text */
@@ -83,9 +83,9 @@ const OverlayIconLabelStyles = styled.div`
   border-radius: 25px;
   color: var(--white);
   display: flex;
-  font-size: var(--sm);
+  font-size: var(--xs);
   font-weight: var(--regularFont);
-  height: ${({ size }) => (size || '40px')};
+  height: ${({ size }) => (size || '30px')};
   justify-content: center;
   padding-left: 10px;
   text-transform: uppercase;

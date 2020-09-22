@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
     --sassPink: #d064e8;
     --jestGreen: #47cc50;
     --nodeGreen: #206124;
+    --mongoGreen: #13aa52;
   }
   /* Fonts */
   :root {
