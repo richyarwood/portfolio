@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   min-height: 100vh;
   position: relative;
+  width: 100%;
 `;
 
 const SideBar = styled.div`
