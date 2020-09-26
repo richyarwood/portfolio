@@ -45,6 +45,12 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html,
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
   html {
     font-size: 10px;
   }
