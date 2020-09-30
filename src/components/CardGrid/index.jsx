@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mq } from '../../utils/presets';
 
 const CardGridWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  ${mq.phablet} {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (20px 1fr)[auto-fill];
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px 30px;
 `;
 
 const CardGrid = ({ children }) => (

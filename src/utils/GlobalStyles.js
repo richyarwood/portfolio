@@ -102,8 +102,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-      padding-left: var(--md);
-      padding-right: var(--md);
+      padding: var(--md);
       width: 100%;
 
     ${mq.tablet} {

@@ -2,37 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { mq } from '../../utils/presets';
 import Tag from '../Tag';
 import Heading from '../Heading';
 import Date from '../Date';
 import OverlayIcon from '../OverlayIcon';
-
-const CardWrapper = styled.div`
-  ${mq.tablet} {
-    flex-basis: 50%;
-    max-width: 50%;
-  }
-
-  ${mq.xl} {
-    flex-basis: 25%;
-    max-width: 25%;
-  }
-`;
 
 const CardBody = styled.div`
   background-color: var(--lightGrey);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--lg);
   min-height: 450px;
   overflow: hidden;
   width: auto;
-
-  ${mq.tablet} {
-    margin: 0 var(--sm) var(--xl) var(--sm);
-  }
 `;
 
 const CardImageWrapper = styled.div`
@@ -78,7 +60,7 @@ const Card = ({
   date,
   type,
 }) => (
-  <CardWrapper>
+  <div>
     <Link to={cardUrl}>
       <CardBody>
         <CardImageWrapper>
@@ -114,7 +96,7 @@ const Card = ({
         </CardContent>
       </CardBody>
     </Link>
-  </CardWrapper>
+  </div>
 );
 
 export default Card;
