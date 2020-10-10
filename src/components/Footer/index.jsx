@@ -4,23 +4,24 @@ import { AiFillGithub } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 const FooterStyles = styled.footer`
-  height: 150px;
-  font-size: var(--md);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   border-top: 1px solid var(--lightGrey);
+  display: flex;
+  font-size: var(--md);
+  flex-direction: column;
+  height: 150px;
+  justify-content: center;
   margin: var(--md);
   margin-top: auto;
 `;
 
 const FooterText = styled.p`
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding: 5px 0;
   margin: 0;
+  padding: 5px 0;
+  text-align: center;
 
   & > span {
     margin-left: var(--xxs);
