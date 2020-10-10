@@ -57,7 +57,6 @@ const GlobalStyles = createGlobalStyle`
     font-size: 10px;
   }
 
-  // TODO remove background color property?
   body {
     background-color: var(--black);
     margin: 0px;
@@ -68,18 +67,29 @@ const GlobalStyles = createGlobalStyle`
   h1,
   h2,
   h3,
-  h4 {
+  h4,
+  h5 {
     color: var(--headingColor);
     font-weight: var(--boldFont);
     margin-bottom: 0px;
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
+
+    ${mq.phablet} {
+      font-size: 4rem;
+    }
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  ${mq.phablet} {
+    h2{
+      font-size: 3rem;
+    }
   }
 
   h3 {
