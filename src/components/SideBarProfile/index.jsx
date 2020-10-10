@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { mq } from '../../utils/presets';
@@ -37,19 +37,24 @@ const SideBarProfile = () => {
 
   return (
     <SideBarProfileStyles>
-      <RoundImage
-        alt="Richard Yarwood - Full Stack Javacript Developer"
-        fluid={data.file.childImageSharp.fluid}
-      />
-      <p
-        css={`
+      <Link
+        to="/"
+        aria-label="Go to home page"
+      >
+        <RoundImage
+          alt="Richard Yarwood - Full Stack Javacript Developer"
+          fluid={data.file.childImageSharp.fluid}
+        />
+        <p
+          css={`
           font-size: var(--md);
           padding-top: var(--sm);
           text-align: center;
         `}
-      >
-        Richard Yarwood
-      </p>
+        >
+          Richard Yarwood
+        </p>
+      </Link>
     </SideBarProfileStyles>
   );
 };
