@@ -24,7 +24,19 @@ const OverlayIconWrapperStyles = styled.div`
   bottom: ${({ bottom }) => (bottom ? `${bottom}%` : '0px')};
   position: ${({ absolute }) => (absolute ? 'absolute' : 'relative')};
   right: ${({ right }) => (right ? `${right}%` : '0px')};
-  z-index: 300;
+  height: 30px;
+  z-index: 200;
+
+  /* Icon label wrapper */
+  &:hover div {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Icon label text */
+  &:hover div#icon-label {
+    padding-right: 40px;
+  }
 `;
 
 const OverlayIconStyles = styled.div`
@@ -37,63 +49,35 @@ const OverlayIconStyles = styled.div`
   height: ${({ size }) => size || '30px'};
   justify-content: center;
   min-width: ${({ size }) => size || '30px'};
-  position: relative;
-  transition: transform ease-in-out 0.2s;
   width: ${({ size }) => size || '30px'};
-  z-index: 1;
-
-  &:hover { /* Icon */
-    transform: scale(1.1);
-    transition: transform ease-in-out 0.5s;
-  }
-
-  &:hover + div { /* OverlayIconLabelWrapper */
-    border: 1px solid var(--white);
-    transition: all ease-in-out 0.5s;
-    width: 110px;
-  }
-
-  &:hover ~ div #overlay-label { /* Label text */
-    opacity: 1;
-    transition: all ease-in-out 0.5s;
-    width: 110px;
-  }
-
-  &:hover ~ div #overlay-label div { /* Label text */
-    flex-grow: 1;
-    opacity: 1;
-    transition: all ease-in-out 0.5s;
-  }
-`;
-
-const OverlayIconLabelWrapper = styled.div`
-  border: 0px;
-  border-radius: 25px;
   position: absolute;
   top: 0;
-  right: 10px;
-  transition: all ease-in-out 0.2s;
-  width: 0px;
+  right: 0;
+  z-index: 1;
 `;
 
 const OverlayIconLabelStyles = styled.div`
   align-items: center;
-  opacity: 0;
-  background-color: var(--darkGrey);
-  border-radius: 25px;
-  color: var(--white);
-  display: flex;
-  font-size: var(--xs);
-  font-weight: var(--regularFont);
-  height: ${({ size }) => (size || '30px')};
-  justify-content: center;
-  padding-left: 10px;
+  background-color: var(--black);
+  border: 1px solid var(--white);
+  border-radius: 20px;
+  color: white;
+  height: ${({ size }) => size || '30px'};
+  position: absolute;
+  right: 0;
+  top: 0;
   text-transform: uppercase;
+  width: max-content;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
   transition: all ease-in-out 0.2s;
-  width: 0px;
 
-  & div {
-    opacity: 0;
+  & div#icon-label {
+    font-size: var(--sm);
+    transition: padding-right ease-in-out 0.2s;
+    padding-right: 0px;
+    padding-left: 10px;
   }
 `;
 
@@ -116,11 +100,11 @@ const OverlayIcon = ({
       >
         {getIcon(type)}
       </OverlayIconStyles>
-      <OverlayIconLabelWrapper>
-        <OverlayIconLabelStyles id="overlay-label" size={size}>
-          <div>{type}</div>
-        </OverlayIconLabelStyles>
-      </OverlayIconLabelWrapper>
+      <OverlayIconLabelStyles>
+        <div id="icon-label">
+          {type}
+        </div>
+      </OverlayIconLabelStyles>
     </OverlayIconWrapperStyles>
   </IconContext.Provider>
 );
