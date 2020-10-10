@@ -11,7 +11,6 @@ const ExperienceItemWrapper = styled.div`
 `;
 
 const ExperienceLeftSide = styled.div`
-  color: var(--white);
   padding-right: var(--md);
   text-align: right;
   width: 30%;
@@ -39,7 +38,6 @@ const ExperienceDivider = styled.div`
 `;
 
 const ExperienceRightSide = styled.div`
-  color: var(--white);
   padding-left: var(--md);
   width: 70%;
 `;
@@ -61,7 +59,6 @@ const ExperienceBlock = ({
       </Heading>
       <p
         css={`
-          color: var(--white);
           font-size: var(--sm);
           margin-top: var(--xs);
           font-weight: var(--regularFont);
@@ -81,7 +78,6 @@ const ExperienceBlock = ({
       </Heading>
       <p
         css={`
-          color: var(--white);
           font-size: var(--sm);
           margin-top: var(--xs);
         `}

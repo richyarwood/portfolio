@@ -19,7 +19,6 @@ const Projects = ({ data, location }) => (
         <Heading
           as="h1"
           underlined
-          color="var(--white)"
           marginLeft
           moreStyles={{ 'margin-bottom': 'var(--lg)' }}
         >

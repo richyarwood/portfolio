@@ -17,7 +17,7 @@ const MenuItemStyles = styled(Link)`
   align-items: center;
   background-color: ${(props) => (props.active ? 'var(--lightGrey)' : 'var(--darkGrey)')};
   border-top: 1px solid var(--lightGrey);
-  color: var(--white);
+  color: var(--bodyColor);
   display: flex;
   font-family: var(--mainFont);
   font-size: 1.8rem;

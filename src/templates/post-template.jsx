@@ -14,9 +14,7 @@ import Tag from '../components/Tag';
 import OverlayIcon from '../components/OverlayIcon';
 
 const PostBody = styled.div`
-  color: var(--white);
   font-size: var(--md);
-  font-weight: var(--lightFont);
   margin: var(--sm);
   transform: translateY(-100px);
 
@@ -90,7 +88,6 @@ const PostTemplate = ({ data, location }) => {
                 <OverlayIcon type={type} />
               </PostTagsWrapper>
               <Heading
-                color="var(--white)"
                 moreStyles={{ 'padding-bottom': '20px' }}
               >
                 {title}

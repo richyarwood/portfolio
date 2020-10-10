@@ -4,7 +4,7 @@ import { mq } from '../../utils/presets';
 
 const HeadingStyles = styled.h1`
   border-bottom: ${({ underlined }) => underlined && '2px solid var(--reactBlue)'};
-  color: ${({ color }) => (color && color ? color : 'var(--white)')};
+  color: ${({ color }) => (color && color ? color : 'var(--headingColor)')};
   display: ${({ underlined }) => (underlined ? 'inline-block' : '')};
   font-family: var(--mainFont);
   font-size: ${({ styledAs }) => styledAs && `${styledAs}rem`};

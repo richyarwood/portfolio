@@ -60,7 +60,6 @@ const Hero = () => {
         <div>
           <Heading
             as="h1"
-            color="var(--white)"
             styledAs="6"
           >
             Richard Yarwood

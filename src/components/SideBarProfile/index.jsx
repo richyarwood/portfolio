@@ -43,7 +43,6 @@ const SideBarProfile = () => {
       />
       <p
         css={`
-          color: var(--white);
           font-size: var(--md);
           padding-top: var(--sm);
           text-align: center;

@@ -21,7 +21,6 @@ const IndexPage = ({ data, location }) => (
         <Heading
           as="h2"
           underlined
-          color="var(--white)"
           marginLeft="var(--md)"
           moreStyles={{ 'margin-bottom': 'var(--lg)' }}
         >

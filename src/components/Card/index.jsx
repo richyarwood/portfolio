@@ -34,9 +34,7 @@ const CardContent = styled.div`
 `;
 
 const CardDescription = styled.p`
-  color: var(--white);
   font-size: 1.6rem;
-  font-weight: var(--lightFont);
   line-height: 2.5rem;
 `;
 
@@ -82,7 +80,6 @@ const Card = ({
           <Date date={date} />
           <Heading
             as="h3"
-            color="var(--white)"
             moreStyles={{ 'margin-bottom': 'var(--xs)' }}
           >
             {title}

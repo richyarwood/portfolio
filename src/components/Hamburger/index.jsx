@@ -24,7 +24,7 @@ const HamburgerStyles = styled.button`
 `;
 
 const Hamburger = ({ top, left, onClick }) => (
-  <IconContext.Provider value={{ color: 'var(--white)', size: `${size}px` }}>
+  <IconContext.Provider value={{ color: 'var(--bodyColor)', size: `${size}px` }}>
     <HamburgerStyles
       top={top}
       left={left}

@@ -5,7 +5,6 @@ import { IconContext } from 'react-icons';
 
 const FooterStyles = styled.footer`
   height: 150px;
-  color: var(--white);
   font-size: var(--md);
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@ const FooterText = styled.p`
 `;
 
 const Footer = () => (
-  <IconContext.Provider value={{ color: 'var(--white)', size: '20px' }}>
+  <IconContext.Provider value={{ color: 'var(--bodyColor)', size: '20px' }}>
     <FooterStyles>
       <FooterText>
         This site is created with Gatsby and Styled Components

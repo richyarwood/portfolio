@@ -4,7 +4,6 @@ import { AiFillLinkedin, AiFillMail, AiFillGithub } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 const IconWrapper = styled.div`
-  color: var(--white);
   display: flex;
   flex-direction: row;
   height: 40px;
@@ -13,7 +12,7 @@ const IconWrapper = styled.div`
 `;
 
 const IconBlock = () => (
-  <IconContext.Provider value={{ color: 'var(--white)', size: '20px' }}>
+  <IconContext.Provider value={{ color: 'var(--bodyColor)', size: '20px' }}>
     <IconWrapper>
       <a
         href="https://www.linkedin.com/in/richyarwood/"

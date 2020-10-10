@@ -44,7 +44,7 @@ const MobileHeader = ({ onClick, height }) => {
   `);
 
   return (
-    <IconContext.Provider value={{ color: 'var(--white)', size: '30px' }}>
+    <IconContext.Provider value={{ color: 'var(--bodyColor)', size: '30px' }}>
       <MobileHeaderStyles height={height}>
         <div
           css={`
@@ -60,7 +60,6 @@ const MobileHeader = ({ onClick, height }) => {
           />
           <p
             css={`
-              color: var(--white);
               font-weight: var(--regularFont);
               font-family: var(--mainFont);
               font-size: var(--md);

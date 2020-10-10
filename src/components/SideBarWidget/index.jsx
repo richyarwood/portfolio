@@ -5,7 +5,7 @@ import Heading from '../Heading';
 import Box from '../Box';
 
 const PostLink = styled(Link)`
-  color: var(--white);
+  color: var(--bodyColor);
   display: block;
   font-size: var(--sm);
   margin: var(--xs) 0;
@@ -15,7 +15,6 @@ const SideBarWidget = ({ heading, items }) => (
   <Box>
     <Heading
       as="h3"
-      color="var(--white)"
       moreStyles={{ 'margin-bottom': 'var(--sm)' }}
       underlined
     >

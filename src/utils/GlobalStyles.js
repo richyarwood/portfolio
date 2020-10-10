@@ -6,6 +6,8 @@ import { mq } from './presets';
 const GlobalStyles = createGlobalStyle`
   /* Color palette */
   :root {
+    --bodyColor: #dfdfdf;
+    --headingColor: #f5f5f5;
     --black: #000000;
     --cssOrange: #ffa000;
     --darkGrey: #1b1b1b;
@@ -27,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
     --secondaryFont: 'Muli';
     --lightFont: 200;
     --regularFont: 400;
-    --boldFont: 600;
+    --boldFont: 800;
   }
 
   /* Add some sizing helpers */
@@ -57,10 +59,19 @@ const GlobalStyles = createGlobalStyle`
 
   // TODO remove background color property?
   body {
-    background-color: ${({ backgroundColor }) => backgroundColor && backgroundColor};
-    margin: 0;
+    background-color: var(--black);
+    margin: 0px;
     font-family: 'Muli';
-    font-weight: var(--lightFont);
+    font-weight: var(--regularFont);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--headingColor);
+    font-weight: var(--boldFont);
+    margin-bottom: 0px;
   }
 
   h1 {
@@ -80,9 +91,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   p, ul, ol {
-    margin: 0;
+    color: var(--bodyColor);
     font-size: 1.6rem;
     line-height: 30px;
+    margin: 0;
     margin-bottom: var(--md);
   }
 

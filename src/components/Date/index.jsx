@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const DateStyles = styled.time`
-  color: var(--white);
+  color: var(--bodyColor);
   font-size: ${({ size }) => (size ? `${size}rem` : '1.4rem')};
   margin-bottom: var(--xxs);
 `;

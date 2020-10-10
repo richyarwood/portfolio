@@ -4,7 +4,6 @@ import Box from '../Box';
 import Heading from '../Heading';
 
 const SkillsParagraph = styled.p`
-  color: var(--white);
   font-size: var(--sm);
   font-family: var(--mainFont);
   line-height: 22px;
@@ -27,7 +26,6 @@ const SkillsSideBar = () => (
     <Box>
       <Heading
         as="h3"
-        color="var(--white)"
         underline
       >
         Core skills
