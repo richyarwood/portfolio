@@ -28,14 +28,18 @@ const OverlayIconWrapperStyles = styled.div`
   z-index: 200;
 
   /* Icon label wrapper */
-  &:hover div {
-    opacity: 1;
-    visibility: visible;
+  @media(hover: hover) {
+      &:hover div {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   /* Icon label text */
-  &:hover div#icon-label {
-    padding-right: 40px;
+  @media(hover: hover) {
+      &:hover div#icon-label {
+      padding-right: 40px;
+    }
   }
 `;
 
@@ -75,9 +79,10 @@ const OverlayIconLabelStyles = styled.div`
 
   & div#icon-label {
     font-size: var(--sm);
-    transition: padding-right ease-in-out 0.2s;
     padding-right: 0px;
     padding-left: 10px;
+    white-space: nowrap;
+    transition: padding-right ease-in-out 0.2s;
   }
 `;
 
