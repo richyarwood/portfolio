@@ -8,7 +8,7 @@ After working for over 25 years in media working in various roles within digital
 
 I focus on front end and full stack JavaScript development, using React for the user interface.
 
-Read more on my [LinkedIn profile](https://www.linkedin.com/in/richyarwood) or look my a my [Word and Experience page](https://www.richyarwood.co.uk/experience).
+Read more on my [LinkedIn profile](https://www.linkedin.com/in/richyarwood) or take a look at my [Work and Experience page](https://www.richyarwood.co.uk/experience).
 
 ## About this site
 
