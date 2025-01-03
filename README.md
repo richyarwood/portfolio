@@ -1,6 +1,6 @@
 # Richard Yarwood - Full Stack JavaScript Developer
 
-> This is the repository for my portfolio site. Find it at [Richard Yarwood - Full Stack JavaScript Developer](https://www.richyarwood.co.uk).
+> This is the repository for my portfolio site.
 
 ## About me
 
